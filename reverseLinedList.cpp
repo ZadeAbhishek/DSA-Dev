@@ -1,3 +1,4 @@
+// Question from From leet code 
 #include <iostream>
 using namespace std;
 
@@ -80,6 +81,36 @@ void deleteNode(Node* &head,Node* &NullPointer,Node* &tail,int position){
 
 }
 
+Node* reverseList(Node* &head) {
+        Node* prev = NULL; 
+        Node* curr = NULL;
+        Node* postCurr = NULL;
+        prev = NULL;
+        curr = head;
+        while(curr!= NULL){
+            postCurr = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = postCurr;
+        }
+        head = prev;
+    return head;
+        
+}
+
+// let try recursive reverse of linked list 
+Node* recurrsiveLinkedList(Node* node, Node* postnode = NULL){
+
+    if(node == NULL){
+        return postnode;
+    }
+    Node* nexttoNode = node->next;
+    node->next = postnode;
+    postnode = node;
+    node = nexttoNode;
+    return recurrsiveLinkedList(node,postnode);
+}
+
 int main (){
 
     Node* head = NULL;
@@ -101,25 +132,9 @@ int main (){
     
 char response;
 response = printlist(head);
-createNodeAtHead(head,tail,85);
-InsertNodeAtEnd(tail,52);
-response = printlist(head);
-createNodeAtHead(head,tail,78);
-InsertNodeAtEnd(tail,32);
-response = printlist(head);
 
-deleteNode(head,NullPointer,tail,5);
-response = printlist(head);
-deleteNode(head,NullPointer,tail,6);
-response = printlist(head);
-deleteNode(head,NullPointer,tail,9);
-response = printlist(head);
-InsertNodeAtEnd(tail,32);
-response = printlist(head);
-deleteNode(head,NullPointer,tail,0);
-response = printlist(head);
-deleteNode(head,NullPointer,tail,0);
-response = printlist(head);
+response = printlist(reverseList(head));
+response = printlist(recurrsiveLinkedList(head));
 
 if(response == 's'){
     cout<<"Success!";
@@ -129,3 +144,4 @@ else{
 }
     return 0;
 }
+

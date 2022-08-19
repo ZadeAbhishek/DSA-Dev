@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 using namespace std;
 class ListNode {
     public:
@@ -9,6 +10,22 @@ class ListNode {
       ListNode(int x) : val(x), next(nullptr) {}
       ListNode(int x, ListNode *next) : val(x), next(next) {}
  };
+ class print {
+    public:
+void printlist(ListNode* n){
+    // function for traversal 
+    // This will also return if traveal is Success or fail
+    if(n!=NULL){
+    while(n!=NULL){
+        cout<<n->val<<" ";
+        n = n->next;
+    }
+    cout<<endl;
+    char s = 's';
+return ;
+}
+}
+};
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
@@ -30,9 +47,28 @@ public:
         }
         return Merged;
     }
+    ListNode* recursiveSort(vector<ListNode*> &list){
+         if(list.empty()){return NULL;}
+           int low = 0;
+           int high = list.size()-1;
+           ListNode* head = NULL;
+           head = mergeSort(list,low,high);
+           return head;
+    }
+    ListNode* mergeSort(vector<ListNode*> &lis,int l,int h){
+        int m = (l+h)/2;
+         //cout<<"Low-->"<<l<<" "<<"Mid-->"<<m<<" "<<"High"<<"High-->"<<h<<endl;
+        if(l == h ){ 
+            return lis[l];}
+        ListNode* list1 = mergeSort(lis,l,m);
+        ListNode* list2 = mergeSort(lis,m+1,h);
+        ListNode* head = mergeTwoLists(list1,list2);
+        return head;
+
+    }
     
    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-      
+       // cout<<list2->val<<endl;
         if(list1 == NULL) return list2;
         if(list2 == NULL) return list1; 
         ListNode* NewList = new ListNode(-1);
@@ -65,24 +101,11 @@ public:
 
     return NewList->next;
 }
+
+
 };
 
-class print {
-    public:
-void printlist(ListNode* n){
-    // function for traversal 
-    // This will also return if traveal is Success or fail
-    if(n!=NULL){
-    while(n!=NULL){
-        cout<<n->val<<" ";
-        n = n->next;
-    }
-    cout<<endl;
-    char s = 's';
-return ;
-}
-}
-};
+
 
 void createNodeAtHead(ListNode* &head,ListNode* &tail, int data){ // &head is reference and it is used so that copy is not created
     ListNode* temp = new ListNode(data);
@@ -124,7 +147,9 @@ int main(){
     nodeList.push_back(list2);
     nodeList.push_back(list3);
     Solution* solve = new Solution();
-    ListNode* merNode =  solve->mergeKLists(nodeList);
-    printer->printlist(merNode);
+    // ListNode* merNode =  solve->mergeKLists(nodeList);
+    // printer->printlist(merNode);
+    ListNode* mer =  solve->recursiveSort(nodeList);
+    printer->printlist(mer);
 
 }

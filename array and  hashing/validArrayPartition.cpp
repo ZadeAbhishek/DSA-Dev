@@ -7,7 +7,7 @@
 using namespace std;
 class Solution {
 public:
-    bool validPartition(vector<int>& nums) {
+    bool validPartition(list<string> nums) {
         //we can use merge sort here
            int l = nums.size(); // length of array 
            bool result =  partion(nums,0,l); //rescussive call 
@@ -23,7 +23,7 @@ private:
            }    
 };
 int main (){
-     vector<int>  s = {4,4,5,6,7};
+     list<string>  s[] = {"114114"};
     Solution* solve = new Solution();    
     bool result = solve->validPartition(s);
     cout<<result;

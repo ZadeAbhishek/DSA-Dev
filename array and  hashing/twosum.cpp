@@ -9,7 +9,7 @@ public:
         // using HashMaps 
         vector<int> ans;
         map<int,int> hash;
-        for(auto i =0;i<nums.size();i++){
+        for(auto i=0;i<nums.size();i++){
              int remainder; 
              remainder = target - nums[i];
              cout<<remainder<<endl;

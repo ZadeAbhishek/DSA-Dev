@@ -48,7 +48,7 @@ class Solution {
 };
 
 int main (){
-     vector<int>  s = {1,2,3};
+    vector<int>  s = {2,2,3,3};
     Solution* solve = new Solution(s.size());    
     vector<vector<int>> result = solve->Permutation(s);
     cout<<"[ ";

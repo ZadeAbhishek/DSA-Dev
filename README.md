@@ -1,1 +1,1 @@
-[![GitHub Streak](https://streak-stats.demolab.com?user=https://github.com/ZadeAbhishek/DSA&theme=tokyonight&hide_border=true&border_radius=4.6)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com?user=ZadeAbhishek/DSA&theme=tokyonight&hide_border=true&border_radius=4.6)](https://git.io/streak-stats)

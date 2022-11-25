@@ -40,7 +40,7 @@ private:
     void sort(vector<int> &arr, int i, int j)
     {
         // take a pivot send to partition
-        cout << i << " " << j << "\n";
+        //cout << i << " " << j << "\n";
         if (i > j)
         {
             return;

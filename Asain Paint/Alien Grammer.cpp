@@ -1,3 +1,5 @@
+// Alien Grammer
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -70,8 +72,6 @@ int main() {
              continue;
          }
     }
-    
-    cout<<c;
     if(missing == ')' && !result) cout<<"Invalid message -> missing "<<"'"<<missing<<"'"<<"After "<<t<<"\n";
     else if(missing == '(' && !result) cout<<"Invalid message -> missing "<<"'"<<missing<<"'"<<"Before "<<t<<"\n";
     else if(s[(s.size() - 1)] != '!') cout<<"Invalid Message missing '!' ";

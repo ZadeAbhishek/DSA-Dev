@@ -1,3 +1,5 @@
+// here Negative numbers can also came so that time use hashmap
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,3 +17,4 @@ int main() {
   for(auto i = 0 ; i < 1000000 ; i++){
       if(arr[i] != 0) cout<<i<<" "<<arr[i]<<"\n";
  }
+}

@@ -33,7 +33,7 @@ class Solution {
           while(i != j){
             if(arr[j] > arr[i]){
                 shift(arr,i+1,arr[j]);
-                //printVector(arr);
+                printVector(arr);
             }
             else{
                 //cout<<i<<'\n';
@@ -41,12 +41,12 @@ class Solution {
                 while(ix >= 0){
                     if(arr[ix] < arr[j]){
                         shift(arr,ix+1,arr[j]);
-                      //  printVector(arr);
+                        printVector(arr);
                         break;
                     }
                     if(ix == 0){
                         shift(arr,ix,arr[j]);
-                       // printVector(arr);
+                        printVector(arr);
                         break;
                     }
                     ix--;
@@ -64,6 +64,10 @@ class Solution {
      return;
     }
 };
+
+
+
+
 
 int main (){
      vector<int> List = {7,11,9,3,6,10,66,78,96,12,36,105,700,64,3,6,0,-1};   

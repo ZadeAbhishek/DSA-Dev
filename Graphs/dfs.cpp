@@ -28,7 +28,7 @@ int main(){
     insert(adj,4,6);
     insert(adj,6,7);
     insert(adj,7,2);
-    insert(adj,3,5);
+    // insert(adj,3,7);
     for(int i = 1;i<8;i++){ //for loop for all nodes 
      if(!vis[i]){ // check if visited
         

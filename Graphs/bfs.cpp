@@ -18,17 +18,17 @@ void bfs(vector < int > node[], int len) {
   while (index != len) {
     if (vis[index] == 0) {
       vis[index] = 1;
-      queue < int > dfs;
-      dfs.push(index);
-      while (!dfs.empty()) {
-        int in = dfs.front();
+      queue < int > bfs;
+      bfs.push(index);
+      while (!bfs.empty()) {
+        int in = bfs.front();
         result.push_back( in );
         cout << in ;
-        dfs.pop();
+        bfs.pop();
         for (auto it: node[ in ]) {
           if (vis[it] == 0) {
             vis[it] = 1;
-            dfs.push(it);
+            bfs.push(it);
           }
         }
       }

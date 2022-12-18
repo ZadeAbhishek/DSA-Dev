@@ -13,11 +13,8 @@ template<class T>
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-       // vector<vector<bool>> vis(size(matrix),vector<bool>(size(matrix[0]),false));
         vector<int> result;
         int top = 0,right = size(matrix[0])-1,bottom = size(matrix)-1,left = 0;
-        
-        cout<<left<<" "<<right<<" "<<bottom<<" "<<top<<"\n";
 
        int direction = 0; 
 

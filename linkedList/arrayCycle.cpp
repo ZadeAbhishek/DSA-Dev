@@ -28,12 +28,12 @@ public:
           slow = nums[slow];
           if(slow2 == slow){
             return slow;
-          }
-        }
+      }
+    }
         return 0;
-        }
+  }
         
-        };
+  };
 
 int main (){
  vector <int> Array{1,3,4,2,2};

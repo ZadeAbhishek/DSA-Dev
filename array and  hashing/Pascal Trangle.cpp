@@ -1,14 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void operator<< (ostream& Cout, vector<vector<int>>& arr)
+void operator<< (ostream& Cout, vector<vector<int>> arr)
 {
     for(auto i = 0 ; i < size(arr) ; i++)
     {
-        for(auto j = 0 ; j < size(arr[0]); j++)
-        {
-            Cout<<arr[i][j]<<" ";
-        }
+        for(auto j = 0 ; j < size(arr[i]); j++) Cout<<arr[i][j]<<" ";
         Cout<<"\n";
     }
     return;
@@ -51,7 +48,7 @@ public:
 
 
 int main (){
-    int n = 5;
+    int n = 10;
     Solution* solve = new  Solution();
     cout<<solve->generate(n);
     return 0;

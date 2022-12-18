@@ -14,7 +14,7 @@ public:
            return result;
     }
 private:
-   bool partion(vector<int>& nums,int x ,int l){
+   bool partion(vector<string>& nums,int x ,int l){
            if(x == l){return true;}
            if(x+1<l && (nums[x] == nums[x+1]) && partion(nums,x+2,l)){ return true;}
            if(x+2<l && (nums[x] == nums[x+1] && nums[x+1] == nums[x+2]) && partion(nums,x+3,l)){return true;}

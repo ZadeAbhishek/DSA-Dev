@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include<unordered_map>
+#include <unordered_map> 
 using namespace std;
 
 class Solution {
@@ -54,24 +54,39 @@ public:
             if(fast == len){
                 return false;
             }
-            if(slow == len){
+            if(i == size(nums)-1){
                 return false;
 
             }
         }
         return false;
     }
+
+     bool containsDuplicateThree(vector<int>& nums) {
+            
+            int temp_var = 0;
+
+            for(auto i = 0 ; i < size(nums) ; i++) 
+            {
+                temp_var = temp_var ^ nums[i];
+                cout<<temp_var<<" ";
+            }
+            return true;   
+
+    }
 };
 
 int main (){
-     vector<int> List = {1,2,3,4,5,6,7,8};
+     
+     
+     vector<int> List = {1,2,3,4,5,6,7};
      int len = List.size();
      for(int i = 0;i<len;i++){
          cout<<List[i]<<" ";
         }
        cout<<endl;
     Solution* solve = new Solution();    
-    bool result = solve->containsDuplicateRecursive(List);
+    bool result = solve->containsDuplicateThree(List);
     cout<<result<<" "<<endl;
 
 }

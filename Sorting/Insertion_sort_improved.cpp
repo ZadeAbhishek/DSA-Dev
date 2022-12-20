@@ -20,9 +20,7 @@ class Solution {
              
              while(arr[temp_indez] < arr[temp_indez-1] && temp_indez > 0)
              {
-                int temp_var = arr[temp_indez];
-                arr[temp_indez] = arr[temp_indez-1];
-                arr[temp_indez-1] = temp_var;
+                swap(arr[temp_indez],arr[temp_indez-1]);
                 temp_indez--;
              }
       }

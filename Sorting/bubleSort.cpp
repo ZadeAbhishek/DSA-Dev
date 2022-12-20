@@ -14,19 +14,19 @@ class Solution {
 
      void sort(vector<int> &arr){
         int pass = arr.size()-1;
+        int i =0;
+        int j =1;
         while(pass!=0){
-            int i =0;
-            int j =1;
-            while(i < pass){
-                if(arr[i] >= arr[j]){
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-                i++;
-                j++;
-            }
-            //cout<<arr;
+
+            i = 0 , j= 1; // each pass we will compare elements setting up last element
+            while(i < pass) // last element is setted therefore pass - 1 or < pass
+            { 
+                if(arr[i] >= arr[j]) swap(arr[i],arr[j]);
+                i++,j++;
+            }    
+            
+           // cout<<arr;
+            
             pass--;
         }
 

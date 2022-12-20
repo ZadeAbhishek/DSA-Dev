@@ -34,7 +34,8 @@ class Solution {
        // get maximum element
        int m = Maxelement(arr);
        // count digit
-       int digit = 1;
+                  int i =0;
+            int j =1, digit = 1;
        for(auto div = 1 ; m/div > 0 ; div *= 10){
           digit *= 10;
        }

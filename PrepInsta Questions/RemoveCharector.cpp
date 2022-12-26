@@ -8,15 +8,16 @@ using namespace std;
 int main (){
     char string[100];
     int i = 0;
-    cout<<"Etr string";
+    //cout<<"Etr string";
     cin.getline(string,sizeof string);
     char temp[100];
     for(auto it : string){
-        if(((it >= 'a' && it <= 'z' || it >= 'A' && it <= 'Z' || it == '\0'))){
+        if(((it >= 'a' && it <= 'z') ||(it >= 'A' && it <= 'Z'))){
            temp[i]  = it;
            i++;
         }
     }
     puts(temp);
+    cout<<temp;
     return 0;
 }

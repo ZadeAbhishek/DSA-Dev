@@ -23,16 +23,23 @@ class Solution {
        // idea is to implement the bucket
        // get maximum element
        int m = Maxelement(arr);
-       // count digit
-       int digit = 1
-       for(int div = 1 ; m/div > 0 ; div *= 10){
-          digit *= 10;
-       }
+    
+       // create temp array of max element size 
 
-       // creating buket using hashmaps
-       unordered_map<int,vector<int>> table; 
-       for(auto i = 0 ; i < 10 ; i++){
-            vector<int> 
+       vector<int> temp(m,0);
+
+       for(auto it : arr) temp[it]++;
+
+       int count = 0;
+       int itr  = 0;
+       while(itr <= m)
+       {
+           while(temp[itr] >= 1){
+           arr[count]  = itr;
+           count++;
+           temp[itr]--;
+           } 
+           itr++; 
        }
 
 }

@@ -19,6 +19,8 @@ class Solution {
         return max;
     }
      
+     // any algorithms can be used 
+     // infact this algorithm increases TC but less SC
      void SelectionSort(vector<int> &arr){
          for(auto i = 0 ; i < arr.size() ; i++){
             for(auto j = 0 ; j < arr.size() ; j++){ 
@@ -36,12 +38,10 @@ class Solution {
        // count digit
                   int i =0;
             int j =1, digit = 1;
-       for(auto div = 1 ; m/div > 0 ; div *= 10){
-          digit *= 10;
-       }
+       for(auto div = 1 ; m/div > 0 ; div *= 10) digit *= 10;
 
        // creating buket using hashmaps
-       unordered_map<int,vector<int>> table; 
+       unordered_map<int,vector<int>> table;
        for(auto i = 0 ; i < 10 ; i++){
             vector<int> temp;
            table.insert({i,temp});

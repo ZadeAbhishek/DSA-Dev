@@ -9,75 +9,52 @@ void printVector(vector<int> result){
     }
 
 class Solution {
+    
+    
     private:
+
+    
     int Maxelement(vector<int> &arr){
-        int max = INT_MIN;
-        for(auto it : arr){
-            if(it > max)
-            max = it;
-        }
-        return max;
+        int maxi = INT_MIN;
+        for(auto it : arr) maxi = max(it,maxi);
+        return maxi;
     }
-     
-     // any algorithms can be used 
-     // infact this algorithm increases TC but less SC
-     void SelectionSort(vector<int> &arr){
-         for(auto i = 0 ; i < arr.size() ; i++){
-            for(auto j = 0 ; j < arr.size() ; j++){ 
-                // if i change < to > to reverse order mai me sort honga
-                if(arr[i] < arr[j]){
-                    swap(arr[i],arr[j]);
-                }
-            }
-        }
-     } 
-     void sort(vector<int> &arr){
+
+     void Bucketsort(vector<int> &arr){
        // idea is to implement the bucket
-       // get maximum element
+       
+       // step 1 Find the max element
        int m = Maxelement(arr);
-       // count digit
-                  int i =0;
-            int j =1, digit = 1;
-       for(auto div = 1 ; m/div > 0 ; div *= 10) digit *= 10;
-
-       // creating buket using hashmaps
+       
+       // step 2 count digit in max element
+       int div = 10, count = 0, digit = 1;
+       while(m > 0) m /= div, div *= 10 , count++;
+       while(count != 0) digit *= 10,count--; 
+       
+       //step 3 Creating buket using hashmaps
        unordered_map<int,vector<int>> table;
-       for(auto i = 0 ; i < 10 ; i++){
-            vector<int> temp;
-           table.insert({i,temp});
-       }
+       for(auto i = 10 ; i > 0 ; i--) table.insert({i,{}});
 
+       // step 4 
        // itr arr and push element to there bucket
        // for example if number is 700
        // 700/digit = 700/100 = 7 insert in 7th bucket
+       for(auto it : arr) table[it/digit].push_back(it);
 
-       for(auto it : arr){
-          int temp = it/digit;
-          table[temp].push_back(it);
-       }
+       // step 5 sort each element in table
+       for(auto curr : table) sort(begin(table[curr.first]),end(table[curr.first]));
+       
 
-       // sort each element in table
-       for(auto i = 0 ; i < 10 ; i++){
-           SelectionSort(table[i]);
-       }
-
-       //push back to original array
-       int count = 0;
-       for(auto i = 0 ; i < 10 ; i++){
-           if(table[i].size()!=0){
-             for(auto it : table[i]){
-                arr[count] = it;
-                count++;
-             }
-           }
-       }
+       //step 6 push back to original array
+       arr.clear();
+       for(auto irr : table) arr.insert(arr.end(), irr.second.begin(), irr.second.end());
 
 }
 
 
    public:
-   void BucketSort(vector<int> &arr){
-     sort(arr);
+   void Bucket(vector<int> &arr){
+     Bucketsort(arr);
      return;
     }
 };
@@ -90,7 +67,7 @@ int main (){
         }
        cout<<"\n";
     Solution* solve = new Solution();
-    solve->BucketSort(List);
+    solve->Bucket(List);
     for(int i = 0;i<List.size();i++){
          cout<<List[i]<<" ";
         }

@@ -5,8 +5,7 @@ class ListNode {
 public:
     int val;
     ListNode* next;
- //constuctor 
-   ListNode(int data){
+    ListNode(int data){
     this->next = NULL;
     this->val = data;
    }    

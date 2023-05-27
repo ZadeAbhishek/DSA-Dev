@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
@@ -31,3 +34,10 @@ public:
         return -1;
     }
 };
+
+int main(){
+    vector<int> arr = {0,1,2,3,4,5,6,7,8,9,10,11,12};
+    Solution * solve = new Solution();
+    int index = solve->search(arr,3);
+    cout<<index;
+}

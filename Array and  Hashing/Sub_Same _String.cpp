@@ -17,11 +17,11 @@ bool check_sub_string(string a, string b)
             }
             else {
                 if(i == 0 && j == 0) memo[i][j] = 1;
-                if(i == 0 && j != 0) memo[i][j] = memo[i][j-1]+1;
                 else memo[i][j] = memo[i][j-1] + 1;
             } 
         }
     }
+
     if(memo[l1-1][l2-1] > 1) return true;
     else return false;
 }

@@ -37,22 +37,6 @@ public:
 
 int main (){
  vector <int> Array{1,3,4,2,2};
-//  int tempArray[] = {1,3,4,2,2};
-//  for(auto i = 0;i<5;i++){
-//     Array->push_back(tempArray[i]);
-//  }
-//   for (int i = 0; i < 5; i++) {
-//    for (auto it = Array[i].begin();
-//              it != Array[i].end(); it++) {
-  
-//             // (*it) is used to get the
-//             // value at iterator is
-//             // pointing
-//             cout << *it << ' ';
- 
-//         }
-        
-//  }
   cout<<endl;
   Solution* solve = new Solution();
   int result = solve->findDuplicate(Array);

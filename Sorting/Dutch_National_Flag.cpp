@@ -23,7 +23,7 @@ int main (){
      cout<<List;
 
      int start = 0;
-     int end = size(List);
+     int end = size(List)-1;
      int curr = 0;
 
      while(curr < end)

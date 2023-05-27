@@ -44,20 +44,12 @@ public:
         int fast = 0;
         int slow = 0;
         int i = 0;
-         while(true){
+        while(i != size(nums)-1){
             fast = nums[nums[fast]];
             slow = nums[slow];
             i++;
-            if(fast == slow){
-                return true;
-            }
-            if(fast == len){
-                return false;
-            }
-            if(i == size(nums)-1){
-                return false;
-
-            }
+            if(fast == slow && fast != len) return true;
+            else break;
         }
         return false;
     }
@@ -86,7 +78,7 @@ int main (){
         }
        cout<<endl;
     Solution* solve = new Solution();    
-    bool result = solve->containsDuplicateThree(List);
+    bool result = solve->containsDuplicate(List);
     cout<<result<<" "<<endl;
 
 }

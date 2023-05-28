@@ -21,14 +21,14 @@ bool check_sub_string(string a, string b)
             } 
         }
     }
-
+    //cout<<memo[l1-1][l2-1]<<"\n";
     if(memo[l1-1][l2-1] > 1) return true;
     else return false;
 }
 
 int main() {
     string a = "Hacker Who Has Access To Your Operating System";
-    string b = "ello";
+    string b = "Hacker Who Has Access To Your Operating System";
     bool result = check_sub_string(a,b);
     if(result) cout<<"Contains SuBstring"<<"\n";
     else cout<<"Dont Contains SuBstring"<<"\n";

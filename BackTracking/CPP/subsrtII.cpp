@@ -62,7 +62,7 @@ public:
 };
 
 int main (){
-    vector<int>  s = {0};
+    vector<int>  s = {0,1,2,3};
     Solution* solve = new Solution();    
     vector<vector<int>> result = solve->subsetsWithDup(s);
     cout<<"[ ";

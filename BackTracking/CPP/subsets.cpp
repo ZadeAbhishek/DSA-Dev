@@ -51,7 +51,7 @@ class Solution {
 };
 
 int main (){
-     vector<int>  s = {1,2,3,4};
+    vector<int>  s = {1,2,3,4};
     Solution* solve = new Solution();    
     vector<vector<int>> result = solve->subsets(s);
     cout<<"[ ";

@@ -29,13 +29,17 @@ class Queue {
         this.data.push(data);
     }
     pop() {
-        this.data.reverse();
         let curr = this.data[0];
+        this.data.reverse();
         this.data.pop();
         this.data.reverse();
         return curr;
     }
     print() {
         console.log(...this.data);
+    }
+    empty() {
+        if (this.data.length == 0) return true;
+        else return false;
     }
 }

@@ -32,8 +32,8 @@ function compare(s, r) {
 }
 
 function init() {
-    let s = "Hacker Who Has Access To Your Operating System";
-    let r = "Hacker Who Has Access To Your Operating System";
+    let s = "abcde";
+    let r = "ace";
 
     let result = compare(s, r);
     console.log(result);

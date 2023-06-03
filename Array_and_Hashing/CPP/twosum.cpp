@@ -14,8 +14,8 @@ public:
              remainder = target - nums[i];
              cout<<remainder<<endl;
             if(hash.count(remainder)){
-                ans.push_back(i);
-                ans.push_back(hash.find(remainder)->second);
+                ans.push_back(nums[i]);
+                ans.push_back(nums[hash.find(remainder)->second]);
                 return ans;
               }
             hash[nums[i]]=i;
@@ -35,7 +35,7 @@ int main (){
         }
        cout<<endl;
     Solution* solve = new Solution();    
-    vector<int> result = solve->twoSum(List,9);
+    vector<int> result = solve->twoSum(List,18);
     for(int i = 0;i<result.size();i++){
          cout<<result[i]<<" ";
         }

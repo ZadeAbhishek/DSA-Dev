@@ -3,7 +3,7 @@
 using namespace std;
 
 typedef pair<int,int>P;
-priority_queue<P,vector<P>,greater<P> >pq;
+priority_queue<P,vector<P>,greater<P> >pq; // min heap
 #define inf 1e7
 vector<int>dist(10001,inf);
 

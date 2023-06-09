@@ -8,7 +8,7 @@ This Repo represents my Compitative programming and Development Progress through
 
 
 ## 🚀 About Me
-I am a fresher looking for an SDE. I am a Google Summer of Code 2021 participant having skills in Web-Development, and Machine learning also worked on various projects such as MQTT servers using Flutter.
+I am a fresher looking for an SDE role. I am a Google Summer of Code 2021 participant having skills in Web-Development, and Machine learning also worked on various projects such as MQTT servers using Flutter.
 
 
 ## 🛠 Skills

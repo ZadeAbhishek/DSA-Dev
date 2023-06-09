@@ -60,7 +60,7 @@ public:
 // };
 
 int main(){
-    vector<char> letters = {'c','f','j'};
+    vector<char> letters = {'c','f','k'};
     Solution *solve;
-    cout<<solve->nextGreatestLetter(letters,'j');
+    cout<<solve->nextGreatestLetter(letters,'c');
 }

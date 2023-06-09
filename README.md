@@ -1,26 +1,51 @@
+Go to the project directory
 
-# Hi, I'm Abhishek Zade! 👋
+```bash
+  cd my-project
+```
 
+From Vscode Extension
+ ```bash
+ 1.Install Docker
+ 2.Install Dev-container
+ 3.sudo groupadd docker
+ 4.sudo usermod -aG docker $USER
+ ```
 
-# DSA DEV
+Start the Docker
 
-This Repo represents my Compitative programming and Development Progress through out year.
+```bash
+  sudo systemctl start docker
+```
 
+Build Docker Image 
 
-## 🚀 About Me
-I am a fresher looking for an SDE role. I am a Google Summer of Code 2021 participant having skills in Web-Development, and Machine learning also worked on various projects such as MQTT servers using Flutter.
+```bash
+   sudo docker build -t dsa-dev
+```
 
+Start the Docker Image
 
-## 🛠 Skills
-C++, Javascript, Python, Django, ML, GIT, SQL, DS & ALGORITHMS, ReactJs
+```bash
+  sudo docker run -it --rn -v `pwd`:/work dsa-dev
+```
 
+List the Docker Image
 
-## 🔗 Links
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arzade/)
+```bash
+  sudo docker container ls
+```
 
+Stop the Docker Image
 
-## License
+```bash
+  sudo docker stop  container_ID
+```
 
-[MIT](https://choosealicense.com/licenses/mit/)
+Finally open File in Remote server Vscode
 
-
+From Remote Vscode Extension
+ ```bash
+ 1.Install C++ extensions
+ 2.Install Cmake extension
+ ```

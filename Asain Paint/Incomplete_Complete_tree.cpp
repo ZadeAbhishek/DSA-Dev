@@ -23,5 +23,5 @@ int main() {
              incomplete = height;
          }
  }
- cout<<complete<<" "<<incomplete;
+ cout<<complete<<" "<<incomplete<<endl;
 }

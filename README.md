@@ -1,7 +1,7 @@
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd DSA-Dev
 ```
 
 From Vscode Extension

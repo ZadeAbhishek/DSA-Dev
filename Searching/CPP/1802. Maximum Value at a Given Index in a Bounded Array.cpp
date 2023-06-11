@@ -50,5 +50,5 @@ int main (){
 
     Solution *solve;
 
-    cout<<solve->maxValue(6,1,10)<<endl;
+    cout<<solve->maxValue(6,1,12)<<endl;
 }

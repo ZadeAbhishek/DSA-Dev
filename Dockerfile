@@ -4,9 +4,13 @@ RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get install -y -V tz
 RUN apt-get install -y vim build-essential git cmake net-tools gdb clang
 RUN apt install -y nodejs
 RUN apt install -y npm
+RUN git clone https://github.com/ZadeAbhishek/DSA-Dev.git
 
-WORKDIR /work
-
-RUN npm install react --save
+WORKDIR /DSA-Dev
 
 ADD . .
+
+RUN npm install -y
+
+
+

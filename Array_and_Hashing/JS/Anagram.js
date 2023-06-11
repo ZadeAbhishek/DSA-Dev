@@ -9,8 +9,9 @@ function Anagram(s, r) {
 
     for (let c of r) Buffer[c.charCodeAt(c)]--; //O(n)
 
-    for (let c of Buffer) //O(1)
-        if (c > 0) return false;
+    for (let c of Buffer){ //O(1)
+        if (c != 0) return false;
+    }
 
     return true;
 }

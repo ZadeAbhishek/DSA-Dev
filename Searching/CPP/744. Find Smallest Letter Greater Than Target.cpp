@@ -62,5 +62,6 @@ public:
 int main(){
     vector<char> letters = {'c','f','k'};
     Solution *solve;
-    cout<<solve->nextGreatestLetter(letters,'c');
+    cout<<solve->nextGreatestLetter(letters,'c')<<endl;
+    
 }

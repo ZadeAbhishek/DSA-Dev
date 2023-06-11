@@ -21,13 +21,13 @@ Start the Docker
 Build Docker Image Linux
 
 ```bash
-   sudo docker build -t <ImageName>
+   sudo docker build . -t <ImageName>
 ```
 
 Start the Docker Image
 
 ```bash
-  sudo docker run -it --rm -v `pwd`:/work <ImageName/Id>
+  sudo docker run -it --rm <ImageName/Id>
 ```
 
 List the Docker Image
@@ -46,13 +46,13 @@ Stop the Docker Image
 Build Docker Image Windows
 
 ```bash
-   docker build ./
+   docker build . -t <ImageName/Id>
 ```
 
 Start the Docker Image
 
 ```bash
-   docker run -it --rm -v ${pwd}:/work <ImageId>
+   docker run -it --rm <ImageName/Id>
 ```
 
 

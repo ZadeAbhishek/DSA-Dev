@@ -3,7 +3,7 @@ using namespace std;
 
 
 int main(){
-    string s = "aa";
+    string s = "aaba";
 
     if(size(s)== 1) return true;
     // to check weather string is pallindrome

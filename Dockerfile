@@ -6,7 +6,3 @@ RUN apt install -y nodejs
 RUN apt install -y npm
 
 WORKDIR /work
-
-RUN npm install react --save
-
-ADD . .

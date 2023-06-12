@@ -27,7 +27,7 @@ Build Docker Image Linux
 Start the Docker Image
 
 ```bash
-  sudo docker run -it --rm <ImageName/Id>
+  sudo docker run -it --rm -v `pwd`:/work <ImageName/Id>
 ```
 
 List the Docker Image
@@ -52,7 +52,7 @@ Build Docker Image Windows
 Start the Docker Image
 
 ```bash
-   docker run -it --rm <ImageName/Id>
+   sudo docker run -it --rm -v ${pwd}:/work <ImageName/Id>
 ```
 
 

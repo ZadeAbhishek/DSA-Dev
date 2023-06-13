@@ -215,6 +215,49 @@ export default function Board() {
 
     if(doubleTouche){
       // important 
+      const touch1x = e.touches[1].pageX;
+      const touch1y = e.touches[1].pageY;
+      const prevTouch1x = prevTouches[1].pageX;
+      const prevTouch1y = prevTouches[1].pageY;
+
+      // get mid point
+      const midx = (touch0x + touch1x)/2;
+      const midy = (touch0y + touch1y)/2;
+
+      const prevmidx = (prevTouch0x + prevTouch1x)/2;
+      const prevmidy = (prevTouch0y + prevTouch1y)/2;
+
+      // calcualte distance between touches 
+      const hypot = Math.sqrt(Math.pow((touch0x-touch1x),2)+Math.pow((touch0y-touch1y),2));
+      const prevHypot = Math.sqrt(Math.pow((prevTouch0x-prevTouch1x),2)+Math.pow((prevTouch0y-prevTouch1x),2));
+
+      // calcuate screen sclae values
+      var zoomAmount = hypot/prevHypot;
+      scale *= zoomAmount;
+      const scaleAmount = 1 - zoomAmount;
+
+      //cal how many pixel to be move in x and y dir
+      const panX = midx - prevmidx;
+      const panY = midy - prevmidy;
+
+      //scale this based on zoom level
+      offsetX += (panX/scale);
+      offsetY += (panY/scale);
+
+      //get realtive position of zoom
+      var zoomRatioX = midx / canvas.clientWidth;
+      var zoomRatioY = midy / canvas.clientHeight;
+
+      const unitZoomedX = trueWidth * scaleAmount;
+      const unitZoomedy = trueHeight * scaleAmount;
+      
+      const unitLeft = unitZoomedX * zoomRatioX;
+      const unitRight = unitZoomedy * zoomRatioY;
+
+      offsetX += unitLeft;
+      offsetY += unitRight;
+
+      redrawCanvas();
     }
     prevTouches[0] = e.touches[0];
   }

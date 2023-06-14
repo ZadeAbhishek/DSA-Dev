@@ -122,7 +122,7 @@ function saveImage(){
     </button>
     <ul className="dropdown-menu">
       <li className='setting-li' ><a onClick={saveImage} className="dropdown-item">Save Image</a></li>
-      <li className='setting-li' onClick={saveBoard}><a className="dropdown-item" href="">Save Board</a></li>
+      <li className='setting-li' onClick={saveBoard}><a className="dropdown-item">Save Board</a></li>
       <li className='setting-li' ><input type="file" className="file"></input></li>
       <li className='setting-li'><button className='btn btn-primary' onClick={loadBoard}>Submit</button></li>
     </ul>

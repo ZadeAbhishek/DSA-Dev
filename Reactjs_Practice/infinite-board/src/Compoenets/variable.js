@@ -1,5 +1,5 @@
 let states = {
-    projectName: 'untiled',
+    projectName: 'untitled',
     draw: 'HOLD',
     focusCenter: false,
     drawing: [],
@@ -28,8 +28,4 @@ let states = {
 
 export default function varaible() {
     return states;
-}
-
-export function setdraw(state) {
-    states.draw = state;
 }

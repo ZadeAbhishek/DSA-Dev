@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import './ToolBox.css'
-import setdraw from './variable'
 import varaible from './variable';
 import { redrawCanvas } from '../Board/Board';
 import {useState} from 'react';

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './Board.css'
 import varaible from '../Compoenets/variable';
 
@@ -8,7 +8,7 @@ export function redrawCanvas() {
     global.canvas.width = document.body.clientWidth;
     global.canvas.height = document.body.clientHeight;
     const context = global.canvas.getContext("2d");
-    context.fillstyle = '#fff';
+    context.fillStyle = "#1f1f1f";
     context.fillRect(0, 0, global.canvas.width, global.canvas.height);
     for (let i = 0; i < global.drawing.length; i++) {
         const line = global.drawing[i];
@@ -60,7 +60,7 @@ export default function Board() {
     useEffect(() => {
 
         global.canvas = document.getElementById("board");
-
+        
         //disable right click
         document.oncontextmenu = function() {
             return false;
@@ -84,6 +84,7 @@ export default function Board() {
 
 
         let leftmouseDown = false;
+         // eslint-disable-next-line
         let rightMouseDown = false;
 
         function mouseDown(e) {

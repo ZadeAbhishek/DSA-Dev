@@ -1,4 +1,5 @@
 let states = {
+    projectName: 'untiled',
     draw: 'HOLD',
     focusCenter: false,
     drawing: [],

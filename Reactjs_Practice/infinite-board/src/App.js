@@ -3,6 +3,7 @@ import './App.css';
 import ToolBox from './Compoenets/ToolBox';
 import { useState } from "react";
 import Draw from '../src/Compoenets/variable'
+import Header from './Compoenets/Header';
 
 
 
@@ -10,6 +11,7 @@ import Draw from '../src/Compoenets/variable'
 function App() {
   return (
     <>
+    <Header/>
     <ToolBox/>
     <Board/>
     

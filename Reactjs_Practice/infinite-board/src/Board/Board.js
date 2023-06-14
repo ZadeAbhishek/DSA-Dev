@@ -193,7 +193,6 @@ export default function Board() {
         function touchEnd(e) {
             singleTouche = false;
             doubleTouche = false;
-            global.draw = 'HOLD';
         }
 
         function touchMove(e) {

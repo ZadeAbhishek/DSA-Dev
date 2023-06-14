@@ -13,6 +13,8 @@ export default function ToolBox() {
   useEffect(() => {
 
     // document.querySelector('.sbm').addEventListener('click',loadBoard);
+    // document.getElementById('drawBtn').addEventListener('mousedown',draw);
+    // document.getElementById('drawBtn').addEventListener('touchstart',draw);
 
   }, []);
 
@@ -21,8 +23,13 @@ export default function ToolBox() {
   
 
   function draw(){
-    if(global.draw === 'DRAW') global.draw = 'PAN';
-    else global.draw = 'DRAW';
+    global.draw = 'DRAW';
+  }
+
+
+  function pan(){
+    console.log("PAN");
+    global.draw = 'PAN';
   }
 
   function setCentre(){
@@ -63,12 +70,18 @@ function loadBoard(){
 function saveBoard(){
   const blob = new Blob([JSON.stringify(global.drawing, null, 6)], {type : 'application/json'});
   const a = document.createElement('a');
-  a.download = 'my-file.json';
   a.href = URL.createObjectURL(blob);
-  a.addEventListener('click', (e) => {
-    setTimeout(() => URL.revokeObjectURL(a.href), 30 * 1000);
-  });
+  a.download = `${global.projectName}.json`;
   a.click();
+}
+
+function saveImage(){
+  var canvas = global.canvas
+   const dataUrl = canvas.toDataURL("image/png");
+   const anchor = document.createElement('a');
+   anchor.href = dataUrl;
+   anchor.download = `${global.projectName}.png`;
+   anchor.click();
 }
 
   return (
@@ -86,10 +99,15 @@ function saveBoard(){
   <button onClick={()=>strokeColor("#fff")} type="button" className="btn btn-light  btn-lg"></button>
 </div>
 
-    <div className="btn-group-vertical" role="group" aria-label="Vertical button group">
-  <button onClick={draw} type="button" data-bs-toggle="button" className="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil" viewBox="0 0 16 16">
+    <div  className="btn-group-vertical" role="group" aria-label="Vertical button group">
+  <button onClick={draw} id="drawBtn" type="button" className="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil" viewBox="0 0 16 16">
   <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
 </svg></button>
+
+<button onClick={pan}  id="PanBtn" type="button" className="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-hand-index" viewBox="0 0 16 16">
+  <path d="M6.75 1a.75.75 0 0 1 .75.75V8a.5.5 0 0 0 1 0V5.467l.086-.004c.317-.012.637-.008.816.027.134.027.294.096.448.182.077.042.15.147.15.314V8a.5.5 0 1 0 1 0V6.435a4.9 4.9 0 0 1 .106-.01c.316-.024.584-.01.708.04.118.046.3.207.486.43.081.096.15.19.2.259V8.5a.5.5 0 0 0 1 0v-1h.342a1 1 0 0 1 .995 1.1l-.271 2.715a2.5 2.5 0 0 1-.317.991l-1.395 2.442a.5.5 0 0 1-.434.252H6.035a.5.5 0 0 1-.416-.223l-1.433-2.15a1.5 1.5 0 0 1-.243-.666l-.345-3.105a.5.5 0 0 1 .399-.546L5 8.11V9a.5.5 0 0 0 1 0V1.75A.75.75 0 0 1 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v5.34l-1.2.24a1.5 1.5 0 0 0-1.196 1.636l.345 3.106a2.5 2.5 0 0 0 .405 1.11l1.433 2.15A1.5 1.5 0 0 0 6.035 16h6.385a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.271-2.715a2 2 0 0 0-1.99-2.199h-.581a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.632 2.632 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
+</svg></button>
+
   <button  onClick={setCentre} type="button" className="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrows-angle-contract" viewBox="0 0 16 16">
   <path fillRule="evenodd" d="M.172 15.828a.5.5 0 0 0 .707 0l4.096-4.096V14.5a.5.5 0 1 0 1 0v-3.975a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0 0 1h2.768L.172 15.121a.5.5 0 0 0 0 .707zM15.828.172a.5.5 0 0 0-.707 0l-4.096 4.096V1.5a.5.5 0 1 0-1 0v3.975a.5.5 0 0 0 .5.5H14.5a.5.5 0 0 0 0-1h-2.768L15.828.879a.5.5 0 0 0 0-.707z"/>
 </svg></button>
@@ -103,8 +121,8 @@ function saveBoard(){
 </svg>
     </button>
     <ul className="dropdown-menu">
-      <li className='setting-li' ><a className="dropdown-item">Save Image</a></li>
-      <li className='setting-li' onClick={saveBoard}><a className="dropdown-item" href="#">Save Board</a></li>
+      <li className='setting-li' ><a onClick={saveImage} className="dropdown-item">Save Image</a></li>
+      <li className='setting-li' onClick={saveBoard}><a className="dropdown-item" href="">Save Board</a></li>
       <li className='setting-li' ><input type="file" className="file"></input></li>
       <li className='setting-li'><button className='btn btn-primary' onClick={loadBoard}>Submit</button></li>
     </ul>

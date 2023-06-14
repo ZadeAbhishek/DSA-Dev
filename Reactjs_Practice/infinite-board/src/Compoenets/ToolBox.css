@@ -1,0 +1,40 @@
+.dropup-center {
+    bottom: 1%;
+    left: 2%;
+    position: fixed;
+    z-index: 99;
+}
+
+.dropdown-menu {
+    padding: 6%;
+}
+
+.btn-group-vertical {
+    top: 45%;
+    left: 1%;
+    padding: 10px;
+    position: fixed;
+    z-index: 99;
+}
+
+.color-btn-grp {
+    top: 1%;
+    left: 1%;
+    padding: 10px;
+    position: fixed;
+    z-index: 99;
+}
+
+.strockInpu {
+    top: 5%;
+    left: 1%;
+    padding: 10px;
+    position: fixed;
+    z-index: 99;
+    color: aliceblue;
+}
+
+.setting-li {
+    margin-left: 2px;
+    margin-bottom: 5px;
+}

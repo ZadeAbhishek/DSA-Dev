@@ -8,7 +8,7 @@ This Propose of this project is to understand the maths behind the Infinte Board
 
 
 ## 🚀 About Me
-I am a fresher looking for an SDE. I am a Google Summer of Code 2021 participant having skills in Web-Development, and Machine learning also worked on various projects such as MQTT servers using Flutter.
+I am a fresher looking for an SDE Role. I am a Google Summer of Code 2021 participant having skills in Web-Development, and Machine learning also worked on various projects such as MQTT servers using Flutter.
 
 
 ## 🛠 Skills

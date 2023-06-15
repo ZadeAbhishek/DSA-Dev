@@ -2,25 +2,33 @@ import React from 'react'
 import varaible from '../Compoenets/variable'
 import './Start.css'
 import {useState} from 'react';
-import { setBoardApp } from '../App';
 import {useNavigate} from 'react-router-dom';
-
+import reactlogo from '../Logo/INFINITE BOARD-logo.png'
 let gobal = varaible();
 
 
 
 export default function Start() {
 
-    const [ProjectName, setProjectName] = useState(gobal.projectName);
+    const [ProjectName, setProjectName] = useState("");
     const navigate = useNavigate();
 
 const set = e =>{
    e.preventDefault();
-   console.log(ProjectName); 
-   gobal.projectName = ProjectName;
+   console.log(ProjectName);
+   if(ProjectName === "") gobal.projectName = "Untitled";
+   else gobal.projectName = ProjectName;
    navigate('board');
 }
   return (
+   <> 
+
+ 
+
+   <div id="welcone-Screen">
+   <img src={reactlogo} alt="INFINTE BOARD" width="500" height="600"/>
+   </div>
+
   <div id="user-name-form">  
   <form onSubmit={set} >
   <div className="row">
@@ -33,6 +41,7 @@ const set = e =>{
   </div>
 </form>
 </div>
+</>
 
   )
 }

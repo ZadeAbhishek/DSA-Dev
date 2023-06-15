@@ -8,10 +8,8 @@ public:
         int len = S.length(), ans = 0;
         for (int i = 0; i < len; i++) {
             int j = i - 1, k = i;
-            cout<<"i:"<<i<<" "<<"j:"<<j<<" "<<"k:"<<k<<"\n";
             while (k < len - 1 && S[k] == S[k+1]){ 
                 k++;
-            cout<<"k:"<<k<<"\n";
             }
             ans += (k - j) * (k - j + 1) / 2, i = k++;
             //while (~j && k < len && S[k++] == S[j--]) ans++;

@@ -71,7 +71,7 @@ public:
 int main (){
      
      
-     vector<int> List = {1,2,3,4,5,6,7};
+     vector<int> List = {1,2,3,4,5,6,7,8,9,10,2};
      int len = List.size();
      for(int i = 0;i<len;i++){
          cout<<List[i]<<" ";

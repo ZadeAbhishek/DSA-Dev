@@ -36,9 +36,9 @@ var canMakeArithmeticProgression = function(arr) {
 
     if (d != Math.round(d)) return false;
 
-    if (d === 0) return true;
+    if (d === 0) return true; // if diffrence is zero all elements are same
 
-    let set = new Set();
+    let set = new Set(); 
 
     for (let element of arr) {
         if (((element - min) % d) !== 0) return false;

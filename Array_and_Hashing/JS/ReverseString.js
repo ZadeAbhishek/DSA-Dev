@@ -18,7 +18,7 @@ function reverse(s) {
         i = 0,
         j = len - 1;
 
-    while (i <= j) console.log(r[i], r[j]), swap(r, i, j), i++, j--;
+    while (i <= j) swap(r, i, j), i++, j--;
 
     console.log(r);
 

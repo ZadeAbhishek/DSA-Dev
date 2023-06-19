@@ -46,17 +46,26 @@ int dp(int W, vector<int> w , vector<int> cost , int CMax , vector<int> memo, in
       return CMax;
 }
 
+void ar(int a[]){
+    a[0] = 5;
+}
+
 
 int main ()
 {
-    int W = 50;
-    vector<int> w = {10, 20, 30};
-    vector<int> c = {60, 100, 120};
-    int CMax = INT_MIN;
-    vector<int>memo(size(w),0); // use to check if curr element is used already
-    int bag = 0;
-    int CurrCost = 0;
-    cout<<dp(W,w,c,CMax,memo,bag,CurrCost);
+    // int W = 50;
+    // vector<int> w = {10, 20, 30};
+    // vector<int> c = {60, 100, 120};
+    // int CMax = INT_MIN;
+    // vector<int>memo(size(w),0); // use to check if curr element is used already
+    // int bag = 0;
+    // int CurrCost = 0;
+    // cout<<dp(W,w,c,CMax,memo,bag,CurrCost);
+
+    int a[2] = {0,1};
+    int *art = a;
+    ar(a);
+    cout<<a[0];
     return 0;
 }
 

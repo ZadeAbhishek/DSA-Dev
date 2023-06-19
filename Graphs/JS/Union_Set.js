@@ -1,6 +1,6 @@
 class Union_set {
 
-    Union_set() {
+    constructor() {
         this.parent;
         this.size;
         this.set_size;

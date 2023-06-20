@@ -13,9 +13,7 @@ init();
 function LongestPalindrome(s) {
     let buffer = new Array(129).fill(0);
     for (let c of s) buffer[c.charCodeAt(c)]++;
-    console.log(...buffer);
-    for (let curr of buffer) console.log(curr, buffer[0]), buffer[0] += curr & 1;
-    console.log(...buffer);
+    for (let curr of buffer) buffer[0] += curr & 1;
     return (s.length - buffer[0]) + (buffer[0] > 0);
 }
 

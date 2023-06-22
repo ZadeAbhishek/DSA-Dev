@@ -2,7 +2,6 @@
 using namespace std;
 
 class Solution {
- unordered_map<int,int> table;
  int Min = INT_MAX;
  int memo[1001] = {0};
  int climb(vector<int>& cost, int steps){

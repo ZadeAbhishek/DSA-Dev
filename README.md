@@ -65,5 +65,11 @@ From Remote Vscode Extension
  2.Install Cmake extension
  ```
 
+Check Total Files
+ ```bash
+git ls-files | wc -l
+git ls-files "./*.json" | wc -l
+ ```
+
 
  Caution : Always keep update your Date and Time for both OS

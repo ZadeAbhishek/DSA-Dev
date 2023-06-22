@@ -13,7 +13,6 @@ class Solution {
         for(int i = 1 ; i <= 2 ; i++){
            r += i;
            if(!table.count(r)){
-           cout<<r<<" "<<i<<'\n';
            climb(n,r);
            table.insert({r,count});
            r -= i;

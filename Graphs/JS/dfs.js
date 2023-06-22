@@ -21,10 +21,7 @@ function traverse(arr, vis, curr, result) {
 }
 
 function dfs() {
-    let arr = [
-        []
-    ];
-    for (let i = 0; i < 9; i++) { arr.push([]) };
+    let arr = new Array(10).fill(null).map(()=>{return new Array()});
     insert(arr, 0, 1);
     insert(arr, 0, 2);
     insert(arr, 0, 5);
@@ -34,7 +31,7 @@ function dfs() {
     insert(arr, 4, 7);
     insert(arr, 7, 8);
     insert(arr, 5, 6);
-    //console.log(arr);
+    //console.log(...arr);
     let vis = [];
     let result = new Array();
     for (let i = 0; i < 9; i++) { vis.push(0) };

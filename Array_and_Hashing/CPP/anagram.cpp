@@ -21,11 +21,8 @@ public:
         for(auto  i = 0; i <= 128; i++) if(s1[(char)i] != 0) return false;
         return true;
    }
-};
 
-class Solution {
-public:
-   bool isAnagram(string s, string t) {
+    bool isAnagram_2(string s, string t) {
  
      // anagram so idea is to use two array of 2 * 128 bytes 
     signed int arr_string[128] = { 0 }; // sc->o(n);
@@ -39,13 +36,14 @@ public:
     return true;  
 
    }
-};  
+};
+
 
 int main (){
      string  s = "Aabbcccc";
      string  t = "Aabbcccc"; 
     Solution* solve = new Solution();    
-    bool result = solve->isAnagram(s,t);
+    bool result = solve->isAnagram_2(s,t);
     cout<<result<<" "<<endl;
 
 }

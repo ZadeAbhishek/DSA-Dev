@@ -84,7 +84,7 @@ public:
                     tab[i][j] = tab[i+1][j-1] + 2;
                 }
             }
-            if(tab[i][j] > max){
+            if(tab[i][j]){
                 if((j-i+1) > max){
                 res = s.substr(i,j-i+1);
                 max = (j-i+1);

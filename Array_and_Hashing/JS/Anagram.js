@@ -17,8 +17,8 @@ function Anagram(s, r) {
 
 
 function init() {
-    let s = "Abhaaaaa Zade";
-    let r = "Abhaaaaa Zade";
+    let s = "zipri";
+    let r = "prizi";
     let result = Anagram(s, r);
     console.log(result);
 }

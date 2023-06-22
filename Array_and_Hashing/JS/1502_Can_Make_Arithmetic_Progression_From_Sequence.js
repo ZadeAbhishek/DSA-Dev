@@ -23,7 +23,7 @@ function sortNumber(a, b) {
  * @param {number[]} arr
  * @return {boolean}
  */
-var canMakeArithmeticProgression = function(arr) {
+var canMakeArithmeticProgression_2 = function(arr) {
     let min = Number.MAX_SAFE_INTEGER + 1;
     let max = Number.MIN_SAFE_INTEGER + 1;
 
@@ -51,4 +51,4 @@ var canMakeArithmeticProgression = function(arr) {
 // if (((element - min) % d) != 0) return false;
 
 let arr = [-68, -96, -12, -40, 16];
-console.log(canMakeArithmeticProgression(arr));
+console.log(canMakeArithmeticProgression_2(arr));

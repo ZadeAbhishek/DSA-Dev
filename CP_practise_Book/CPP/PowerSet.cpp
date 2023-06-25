@@ -22,11 +22,11 @@ int main(){
    vector<vector<int>> result;
    powerSet(arr,temp,result);
    
-   for(auto k : result){
-    for(auto x : k){
-        cout<<x<<" ";
-    }
-    cout<<endl;
-   }
+//    for(auto k : result){
+//     for(auto x : k){
+//         cout<<x<<" ";
+//     }
+//     cout<<endl;
+//    }
 
 }

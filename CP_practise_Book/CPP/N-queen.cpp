@@ -44,7 +44,6 @@ bool solveNQUtil(int board[N][N], int col)
 		ld[row-col+n-1] and rd[row+coln] where
 		ld and rd are for left and right
 		diagonal respectively*/
-        cout<<i - col + N - 1<<"\n";
 		if ((ld[i - col + N - 1] != 1 && rd[i + col] != 1) && cl[i] != 1) {
 			/* Place this queen in board[i][col] */
 			board[i][col] = 1;

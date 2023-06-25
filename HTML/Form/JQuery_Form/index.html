@@ -8,7 +8,8 @@
 </script>
 <script>
     $(() => {
-        $('#submitbtn').click(function(ev) {
+        $('#submitbtn').click(function(e) {
+            e.preventDefault();
             var form = $('#formID');
             var url = form.attr('action');
             $.ajax({
@@ -17,12 +18,8 @@
                 data: form.serialize(),
                 success: function(data) {
                     //data sucessfull
-                    alert(`Submited Name`);
+                    alert(data);
                 },
-                error: function(data, ev) {
-                    //data error
-                    alert(`Try Again`);
-                }
             });
         });
     });

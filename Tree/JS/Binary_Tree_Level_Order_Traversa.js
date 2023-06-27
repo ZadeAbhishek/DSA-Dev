@@ -10,9 +10,7 @@ class Tnode{
 
 function maxHeight(root){
     if(root === null) return 0;
-    let l = maxHeight(root.left);
-    let r = maxHeight(root.right);
-    return 1 + Math.max(l,r);
+    return 1 + Math.max(maxHeight(root.left),maxHeight(root.right));
 }
 
 drive();

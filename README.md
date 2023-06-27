@@ -29,6 +29,19 @@ Start the Docker Image
 ```bash
   sudo docker run -it --rm -v `pwd`:/work <ImageName/Id>
 ```
+Directly run Step 1: Script Change User Permision
+
+```bash
+   chmod u+x run.sh
+   sed -i -e 's/\r$//' run.sh
+```
+(change you docker name in run.sh)
+
+Directly run Step 2: After 1st time follow step 2 only
+
+```bash
+   ./run.sh
+```
 
 List the Docker Image
 
@@ -54,8 +67,6 @@ Start the Docker Image
 ```bash
    sudo docker run -it --rm -v ${pwd}:/work <ImageName/Id>
 ```
-
-
 
 Finally open File in Remote server Vscode
 

@@ -88,7 +88,7 @@ int main() {
 
   Schedular schedular(rooms);
 
-  cout << schedular.book(1,2, 5) << "\n";
+  cout << schedular.book(1,2, 5) << "\n"; // day start end
   cout << schedular.book(1,5, 8) << "\n";
   cout << schedular.book(1,4, 8) << "\n";
   cout << schedular.book(4,3, 6) << "\n";

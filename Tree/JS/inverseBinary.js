@@ -29,9 +29,8 @@ function invert(root){
     if(root === null) return null;
     let l = invert(root.left);
     let r = invert(root.right);
-    let temp = r;
     root.right = l;
-    root.left = temp;
+    root.left = r;
     return root;
 }
 

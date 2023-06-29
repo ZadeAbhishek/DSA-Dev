@@ -33,7 +33,7 @@ void gapSort(std::vector<int> &nums1 , std::vector<int> &nums2){
 }
 
 int main(){
-    std::vector<int> nums1 = {1,3,8,5};
+    std::vector<int> nums1 = {1,3,8,5,9,4,10,1,6};
     std::vector<int> nums2 = {2,4,6};
     gapSort(nums1,nums2);
     std::cout<<nums1;

@@ -49,3 +49,74 @@ Using LIMIT Keyword(MYSQL)
    FROM Emplyoee
    ORDER BY Salary DESC LIMIT N;
 ```
+#### 4. Write an SQL query to create an empty table with the same structure as some other table.
+
+
+```bash
+   CREATE TABLE Newtable
+   SELECT * FROM Employee WHERE 1 = 0;
+```
+1 = 0 Will Be false so only structure will be copied no data will Copy
+
+
+#### 5. Write an SQL query to create a table with the same data and Structure as some other table.
+
+```bash
+   CREATE TABLE Newtable
+   SELECT * FROM Employee;
+```
+
+#### 6. Write an SQL query to fetch only even rows from the table.
+In case we have an auto-increment field e.g. EmpId then we can simply use the below query-
+```bash
+   SELECT * FROM EmployeeDetails 
+   WHERE MOD (EmpId, 2) = 0;
+```
+
+In case we don’t have such a field then we can use the below queries.
+Using Row_number in SQL server and checking that the remainder, when divided by 2, is 1-
+```bash
+   SELECT E.EmpId, E.Project, E.Salary
+   FROM (
+    SELECT *, Row_Number() OVER(ORDER BY EmpId) AS RowNumber
+    FROM EmployeeSalary
+    ) E
+   WHERE E.RowNumber % 2 = 0;
+```
+Using a user-defined variable in MySQL-
+```bash
+   SELECT *
+   FROM (
+      SELECT *, @rowNumber := @rowNumber+ 1 rn
+      FROM EmployeeSalary
+      JOIN (SELECT @rowNumber:= 0) r
+     ) t 
+   WHERE rn % 2 = 0;
+```
+
+#### 7. Write an SQL query to fetch only odd rows from the table.
+In case we have an auto-increment field e.g. EmpId then we can simply use the below query-
+```bash
+   SELECT * FROM EmployeeDetails 
+   WHERE MOD (EmpId, 2) = 1;
+```
+
+In case we don’t have such a field then we can use the below queries.
+```bash
+   SELECT E.EmpId, E.Project, E.Salary
+   FROM (
+    SELECT *, Row_Number() OVER(ORDER BY EmpId) AS RowNumber
+    FROM EmployeeSalary
+    ) E
+   WHERE E.RowNumber % 2 = 1;
+```
+Using a user-defined variable in MySQL-
+```bash
+   SELECT *
+   FROM (
+      SELECT *, @rowNumber := @rowNumber+ 1 rn
+      FROM EmployeeSalary
+      JOIN (SELECT @rowNumber:= 0) r
+     ) t 
+   WHERE rn % 2 = 1;
+```

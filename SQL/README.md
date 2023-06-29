@@ -34,3 +34,18 @@ Using LIMIT Keyword (MYSOL server)
    ORDER BY Salary DESC LIMIT N-1,1; 
 ```
 ORDER BY DESC will give result in Desending Order Inner Query will Return From Bottom N Highest
+
+#### 3. Write SQL query to find N top Records.
+
+Using Top Keyword(SQL server)
+```bash
+   SELECT TOP N * 
+   FROM Emplyoee
+   ORDER BY Salary DESC;
+```
+Using LIMIT Keyword(MYSQL)
+```bash
+   SELECT *
+   FROM Emplyoee
+   ORDER BY Salary DESC LIMIT N;
+```

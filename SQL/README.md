@@ -120,3 +120,15 @@ Using a user-defined variable in MySQL-
      ) t 
    WHERE rn % 2 = 1;
 ```
+
+#### 8. Write an SQL query to remove duplicates from a table without using a temporary table.
+In case we can use DELETE with INNER JOIN
+```bash
+   DELETE E1 from EmployeeTable E1
+   INNER JOIN EmployeeDetails E2
+   WHERE E1.EmpId > E2.EmpId
+   AND E1.FullName = E2.FullName
+   AND E1.ManagerID = E2.ManagerID // Basically We habe to write all Attb here
+   AND E1.DataOfJoining = E2.DataogJoining
+   AND E1.city = E2.city
+```

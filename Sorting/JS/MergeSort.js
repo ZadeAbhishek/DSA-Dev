@@ -18,8 +18,6 @@ function MergeSort(arr, high, low) {
     if (high == low) return [arr[low]];
     let mid = Math.floor((high + low) / 2);
     return SortAndMerge(MergeSort(arr, mid, low), MergeSort(arr, high, mid + 1));
-
-
 }
 
 function init() {

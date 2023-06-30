@@ -15,7 +15,6 @@ function swap_arr(arr, i, j) {
 
 function partition(arr, i, pivot, j) {
     while (i <= j) {
-        console.log("sss");
         if (arr[i] >= arr[pivot] && arr[j] <= arr[pivot]) swap_arr(arr, i, j), i++, j--;
         if (arr[i] < arr[pivot]) i++;
         if (arr[j] > arr[pivot]) j--;

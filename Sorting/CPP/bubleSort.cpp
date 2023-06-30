@@ -11,8 +11,8 @@ using namespace std;
 
 class Solution {
     private:
-
-     void sort(vector<int> &arr){
+     template<class T>
+     void sort(vector<T> &arr){
         int pass = arr.size()-1;
         int i =0;
         int j =1;
@@ -34,7 +34,8 @@ class Solution {
 
 
    public:
-   void BubleSort(vector<int> &arr){
+   template<class T>
+   void BubleSort(vector<T> &arr){
      sort(arr);
      return;
     }

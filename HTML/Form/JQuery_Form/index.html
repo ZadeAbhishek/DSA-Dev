@@ -4,16 +4,16 @@
 <head>
     <title>Form</title>
 </head>
-<script src="https://code.jquery.com/jquery-3.6.4.js">
+<script src="https://code.jquery.com/jquery-3.6.4.js" crossorigin="anonymous">
 </script>
 <script>
     $(() => {
         $('#submitbtn').click(function(e) {
             e.preventDefault();
             var form = $('#formID');
-            var url = form.attr('action');
+            var url = "http://localhost:8080/";
             $.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: url,
                 data: form.serialize(),
                 success: function(data) {

@@ -50,3 +50,29 @@ public:
         return stk.empty();
     }
 };
+
+// most optimised
+class Solution {
+    stack<char> s;
+public:
+    bool check(char x){
+        if(s.empty()) return false;
+        if(x == '}') x = '{';
+        else if(x == ')') x = '(';
+        else if(x == ']') x = '[';
+        if(s.top() == x) s.pop();
+        else return false;
+        return true;
+    }
+  
+    bool isValid(string t) {
+        for(auto x:t){
+             
+            if(x == '{' || x == '(' || x == '[') s.push(x);
+            else if(check(x)) continue;
+            else return false;
+        }
+        if(s.empty()) return true;
+        else return false;
+    }
+};

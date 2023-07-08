@@ -1,6 +1,6 @@
-class Solution {
-public:
-     
+#include<bits/stdc++.h>
+using namespace std;
+ 
 
     bool isValid(char t,char s) {
         if(t == '{' && s == '}') return true;
@@ -11,20 +11,22 @@ public:
     } 
 
 
-    int getValidityCount(string &s, int start , int end){
+    int getValidityCount(string &s, int start , int end, vector<vector<int>> &memo){
         // base case 
         if(start > end) return 0;
         
+        // memoization
+        if(memo[start][end] != -1) return memo[start][end];
         // Solver
         int maxCount = 0;
         for(int curr = start ; curr < end ; curr++){
             int currMax = 0;
-            if(!isValid(s[curr],s[end])) currMax = 0 + getValidityCount(s,start,curr-1) + getValidityCount(s,curr+1,end-1);
-            else currMax = 2 + getValidityCount(s,start,curr-1) + getValidityCount(s,curr+1,end-1);
+            if(!isValid(s[curr],s[end])) currMax = 0 + getValidityCount(s,start,curr-1,memo) + getValidityCount(s,curr+1,end-1,memo);
+            else currMax = 1 + getValidityCount(s,start,curr-1,memo) + getValidityCount(s,curr+1,end-1,memo);
 
             maxCount = max(maxCount,currMax); 
         }
-        return maxCount; 
+        return memo[start][end] = maxCount; 
         
     }
 
@@ -33,6 +35,12 @@ public:
         int string_Lenght = s.size();
         s.push_back('#');
         s.insert(s.begin(),'#');
-        return getValidityCount(s,1,string_Lenght);
+        vector<vector<int>> meme(string_Lenght+1,vector<int>(string_Lenght+1,-1));
+        return getValidityCount(s,1,string_Lenght,meme);
     }
-};
+
+
+int main(){
+   string s = "(((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))";
+   cout<<longestValidParentheses(s);
+}

@@ -1,3 +1,6 @@
+
+// dfs can also be used
+// union find should also work here
 class Solution {
 public:
     bool possibleBipartition(int n, vector<vector<int>>& dislikes) {

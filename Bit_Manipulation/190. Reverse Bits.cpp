@@ -10,7 +10,7 @@
             int x = n & 1; // get lsb
             int reverse = x<<(31-i); // ex if last bit is 1 and i is 0 then 31 - 0  i.e mask of 31bith will me created.
             sum = sum | reverse; // using or operation to add bit to sum
-            n = n >> 1; // right shift to get next lsb
+            n = n >> 1; // right shift to get next lsb 
        }
        return sum;
     }

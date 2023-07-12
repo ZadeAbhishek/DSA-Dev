@@ -11,6 +11,8 @@ public:
 };
 */
 
+
+//brute force approch using quueue
 class Solution {
   public: Node * flatten(Node * head) {
     if (head == NULL) return head;
@@ -40,4 +42,39 @@ class Solution {
     dummy -> prev = NULL;
     return dummy;
   }
+};
+
+
+// Recrusive not my solution but learn it will help you in interview 
+class Solution {
+public:
+    Node* flat(Node* head) {
+        if (!head)
+            return NULL;
+        Node* temp1=NULL;
+        while(head) {
+            if (head->child) {
+                Node* tail = flat(head->child);
+                Node* temp = head->next;
+                head->next = head->child;
+                head->child->prev = head;
+                head->child = NULL;
+                if (tail) {
+                    tail->next = temp;
+                    if (temp)
+                    temp->prev = tail;
+                }
+                temp1=tail;
+                head = temp;
+            } else {
+                temp1=head;
+                head = head->next;
+            }
+        }
+        return temp1;
+    }
+    Node* flatten(Node* head) {
+        flat(head);
+        return head;
+    }
 };

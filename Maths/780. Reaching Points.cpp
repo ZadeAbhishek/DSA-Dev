@@ -24,6 +24,12 @@ public:
 
      // now we just need to check can we reach there 
 
+
+     if(sx == tx && sy <=ty && (ty - sy)%sx == 0) return true;
+
+     return (sy == ty && sx <= tx && (tx - sx)%sy == 0);
+    }
+};
 // why (ty-sy)%sx == 0?
 // since
 // sy will translate to ty only by (sx+sy), if they translate then (sx, sy+k*sx) = ty for some k
@@ -31,11 +37,4 @@ public:
 // Since sx,sy,tx,ty are all integer, then k has to be a integer which means, there must be a integer k that help us to reach ty. Which makes reminder to be 0
 // Hence
 // (ty-sy) % sx == 0
-
-
-     if(sx == tx && sy <=ty && (ty - sy)%sx == 0) return true;
-
-     return (sy == ty && sx <= tx && (tx - sx)%sy == 0);
-    }
-};
 // Complexity : O(log(n)) where n = Max(tx,ty)

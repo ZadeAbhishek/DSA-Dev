@@ -86,7 +86,7 @@ int get_Valid_Partition_tabulation(std::string s)
 			int partition = INT_MAX;
 			if (isPalindrome(s, index, currIndex))
 			{
-				partition = 1 + get_Valid_Partition(s, currIndex + 1);
+				partition = 1 + dp[currIndex+1];
 				minPartion = std::min(partition, minPartion);
 			}
 		}

@@ -9,6 +9,7 @@ std::unordered_map<int,int> dp;
 std::unordered_map<std::string,bool> hash;
 std::unordered_set<std::string> setHash;
 
+//not workig
 bool solve(std::string s, int index){
     //base case 
     if(index == s.size()) return false;
@@ -26,7 +27,9 @@ bool solve(std::string s, int index){
 
 }
 
-// optimised
+
+// working
+// optimised most better than solve 3
 bool solve2(std::string s){
     //base case 
     int size = s.size();
@@ -37,7 +40,7 @@ bool solve2(std::string s){
          std::string temp;
         for(int j = i ; j < size ; j++){
             temp.push_back(s[j]);
-            if(setHash.find(temp)!=setHash.end()) memo[i] = memo[j+1]?1:0;
+            if(setHash.find(temp)!=setHash.end() && memo[i] != 1) memo[i] = memo[j+1]?1:0;
              
         }
     }
@@ -47,18 +50,21 @@ bool solve2(std::string s){
 }
 
 bool solve3(std::string s){
-    //base case 
+    //base case
+    if(s.size() == 1 && hash.count(s) && hash[s] == true) return true;
+
+    if(s.size() == 1 && !hash.count(s)) return false; 
 
     //Dp check
-    if(s.size() == 1 && hash[s] != true) return false;
-    if(hash[s] == true) return hash[s];
+
+
+    if(hash.count(s)) return hash[s];
     
 
-    for(int i = 0; i < s.size() ; i++){
+    for(int i = 0; i < s.size()-1 ; i++){
         std::string part1 = s.substr(0,i+1);
         std::string part2 = s.substr(i+1,s.size()-i);
-        std::cout<<part1<<" "<<part2<<"\n";
-        if(solve2(part1) && solve2(part2)) return hash[s] = true;
+        if(solve3(part1) && solve3(part2)) return hash[s] = true;
     }
 
     return hash[s] = false;
@@ -67,7 +73,7 @@ bool solve3(std::string s){
 
 int main(){
     std::string s ="aaaaaaa";
-    std::vector<std::string> wordDict = {"aa","aaaa"};
+    std::vector<std::string> wordDict = {"aaa","aaaa"};
     for(auto s : wordDict) hash.insert({s,true});
     setHash.insert(wordDict.begin(),wordDict.end());
     std::cout<<solve2(s);

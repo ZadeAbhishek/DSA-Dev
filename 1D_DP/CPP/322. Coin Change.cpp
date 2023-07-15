@@ -38,3 +38,32 @@ public:
         return minDenomination==INT_MAX?-1:minDenomination;
     }
 };
+
+// optimised
+class Solution {
+public:
+    
+    int getChange(vector<int> &coins, int amount,vector<int> &memo){
+        // base case
+        if(amount == 0) return 0;
+        if(amount < 0) return INT_MAX;
+        if(memo[amount] != -1) return memo[amount];
+
+        // recursive case
+        int mini = INT_MAX;
+        for(int i = 0 ; i < coins.size(); i++){
+            int ans = getChange(coins,amount - coins[i],memo);
+            if(ans != INT_MAX) mini = min(mini,ans+1);
+        }
+        memo[amount] = mini;
+
+        return memo[amount];
+    }
+    
+    int coinChange(vector<int>& coins, int amount) {
+        if(amount == 0) return 0;
+        vector<int> memo(amount+1,-1);
+        int minDenomination = getChange(coins,amount,memo); // pass by reference
+        return minDenomination==INT_MAX?-1:minDenomination;
+    }
+};

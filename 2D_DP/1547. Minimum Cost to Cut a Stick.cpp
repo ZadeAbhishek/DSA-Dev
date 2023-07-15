@@ -1,7 +1,7 @@
 /*
 https://www.youtube.com/watch?v=xwomavsC86c&ab_channel=takeUforward
 */
-
+// partion dp example
 class Solution {
 public:
     
@@ -13,7 +13,7 @@ public:
 
         // main case
         int minCost = INT_MAX;
-        for(int k = i ; k <= j ; k++){
+        for(int k = i ; k <= j ; k++){ // k represents cuts
             int cost = cuts[j+1] - cuts[i-1]  + cutStick(cuts,i,k-1,memo) + cutStick(cuts,k+1,j,memo);
             minCost = min(cost,minCost);
         }
@@ -35,7 +35,7 @@ public:
 
 // tc O(n^2 * n) = O(n^3) n^2 because we are using i and j n for for loop of k
 // sc O(n^2) + auxilary stack
-
+// partion dp
 class Solution {
    public:
 

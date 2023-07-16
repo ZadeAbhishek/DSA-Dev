@@ -10,6 +10,8 @@ Explanation: We can partition the nodes into two sets: {0, 2} and {1, 3}.
 
 */
 
+#include<bits/stdc++.h>
+using namespace std;
 
 
 class UnionSet{
@@ -88,3 +90,5 @@ public:
     return s->checkBipartile(graph);
     }
 };
+
+int main(){}

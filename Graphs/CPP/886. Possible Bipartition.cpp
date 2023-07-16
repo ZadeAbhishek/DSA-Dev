@@ -1,4 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
 
+int main(){}
 // dfs can also be used
 // union find should also work here
 class Solution {

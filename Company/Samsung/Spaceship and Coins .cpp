@@ -31,9 +31,9 @@ void solve(int board[][5], int x, int y, int currCoins, int burstLevel, bool bus
     if(board[x][y] == 1){
         // if equal to one add this to ans and move
         ans = max(ans,currCoins+1);
-        solve(board,x-1,1,currCoins+1,burstLevel,busrtBoom);
-        solve(board,x-1,2,currCoins+1,burstLevel,busrtBoom);
-        solve(board,x-1,3,currCoins+1,burstLevel,busrtBoom);
+        solve(board,x-1,y-1,currCoins+1,burstLevel,busrtBoom);
+        solve(board,x-1,y,currCoins+1,burstLevel,busrtBoom);
+        solve(board,x-1,y+1,currCoins+1,burstLevel,busrtBoom);
         return; // return it we dont need to check futher
     }
 
@@ -44,16 +44,16 @@ void solve(int board[][5], int x, int y, int currCoins, int burstLevel, bool bus
         
         if(busrtBoom == false){
              busrtBoom = true;
-             solve(board,x-1,1,currCoins,burstLevel-1,busrtBoom);
-             solve(board,x-1,2,currCoins,burstLevel-1,busrtBoom);
-             solve(board,x-1,3,currCoins,burstLevel-1,busrtBoom);
+             solve(board,x-1,y-1,currCoins,burstLevel-1,busrtBoom);
+             solve(board,x-1,y,currCoins,burstLevel-1,busrtBoom);
+             solve(board,x-1,y+1,currCoins,burstLevel-1,busrtBoom);
         }
 
         
         if(busrtBoom == true && burstLevel > 0){
-                 solve(board,x-1,1,currCoins,burstLevel-1,busrtBoom);
-                 solve(board,x-1,2,currCoins,burstLevel-1,busrtBoom);
-                 solve(board,x-1,3,currCoins,burstLevel-1,busrtBoom);
+                 solve(board,x-1,y-1,currCoins,burstLevel-1,busrtBoom);
+                 solve(board,x-1,y,currCoins,burstLevel-1,busrtBoom);
+                 solve(board,x-1,y+1,currCoins,burstLevel-1,busrtBoom);
         }
 
         if(busrtBoom == true && burstLevel <= 0) return;
@@ -69,6 +69,7 @@ int noTestCase;
 cin>>noTestCase;
 while(noTestCase--){
     cin>>N;
+    ans = -1;
     for(int i = 0 ; i < N ; i++){
         for(int j = 0 ; j < 5 ; j++){
             cin>>board[i][j];
@@ -79,7 +80,7 @@ while(noTestCase--){
     solve(board,N-1,2,0,5,false);
     solve(board,N-1,3,0,5,false);
 
-    cout<<ans<<"\n";
+    cout<<"ans:"<<ans<<endl;
 }
 
 }
@@ -106,6 +107,58 @@ while(noTestCase--){
 2 2 2 2 2
 0 0 1 0 0
 
+
+1
+3
+1 1 0 0 1
+2 2 2 1 2
+0 0 2 0 0
+
 x x S x x  -->highlighted yellow
 
+*/
+
+/*
+4
+7
+1 2 0 0 1
+2 0 0 1 0
+0 1 2 0 1
+1 0 0 2 1
+0 2 1 0 1
+0 1 2 2 2
+1 0 1 1 0
+5
+1 1 0 0 0
+1 2 2 2 1 
+1 1 2 2 1 
+2 2 2 1 2 
+2 2 0 2 0 
+6
+2 2 2 2 2
+0 0 0 0 0
+0 0 2 0 0
+2 0 0 0 2
+0 0 0 0 0
+1 2 2 2 1
+12
+2 2 2 2 2
+1 1 0 1 1
+0 1 0 1 0 
+1 0 1 0 1
+2 2 0 0 2
+1 1 0 0 1
+2 2 2 2 2
+1 1 0 1 0
+0 1 0 1 0
+1 0 1 0 1
+2 2 2 2 2
+2 2 0 1 1
+ 
+Answers 
+6
+3
+-1
+8
+ 
 */

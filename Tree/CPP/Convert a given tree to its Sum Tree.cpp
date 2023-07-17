@@ -1,5 +1,7 @@
 
 // C++ program to convert a tree into its sum tree
+// Given a Binary Tree where each node has positive and negative values. Convert this to a tree where each node contains the sum of the left and right subtrees in the original tree. 
+// The values of leaf nodes are changed to 0.
 
 // completely coped from GFG 
 // link https://www.geeksforgeeks.org/convert-a-given-tree-to-sum-tree/

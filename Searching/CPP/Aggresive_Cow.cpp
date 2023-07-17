@@ -30,8 +30,8 @@ bool check_cow_placement(std::vector<int> &stalls, int k, int mid){
 int can_We_Place_Cows(std::vector<int> &stalls, int k){
      std::sort(stalls.begin(),stalls.end());
      int start = 0;
-     int maxi = *max_element(stalls.begin(),stalls.end());
-     int mini = *min_element(stalls.begin(),stalls.end());
+     int maxi = *max_element(stalls.begin(),stalls.end()); // we  optimise this step
+     int mini = *min_element(stalls.begin(),stalls.end()); // we can optimised this step
      int end = maxi - mini;
      int ans = -1;
      int mid;
@@ -50,7 +50,7 @@ int can_We_Place_Cows(std::vector<int> &stalls, int k){
 
 int main(){
     int k = 3;
-    std::vector<int> stalls = {2,4,8,1,9};
+    std::vector<int> stalls = {1,3,5,8,10};
     std::cout<<can_We_Place_Cows(stalls,k)<<"\n";
 }
 

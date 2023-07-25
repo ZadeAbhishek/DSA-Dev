@@ -105,7 +105,7 @@ int get_Attemps_tabulation(int n , int k){
 
 // driver code
 int main(){
-    int eggs = 2;
+    int eggs = 5;
     int floor = 10;
     cout<<get_Attemps(eggs,floor)<<"\n";
     vector<vector<int>> dp(eggs+1,vector<int>(floor+1,-1));

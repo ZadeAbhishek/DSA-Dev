@@ -50,6 +50,7 @@ void traverse(int **matrix , int curr , int totat_visited_office , int *visited 
 
     // base case
     if(totat_visited_office == totat_to_visited-1){
+         // edge case he should be able to go home at end
          if(matrix[curr][0] != 0) ans = min(cost+matrix[curr][0],ans);
          return;
     }

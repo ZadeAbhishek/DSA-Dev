@@ -34,6 +34,8 @@ int main (){
         
         int temp = Index_Table[problem[i]];
 
+        
+        // swap previous with current index
         swap(problem[i],problem[temp]);
 
         count++; 

@@ -37,6 +37,6 @@ int minOperation = 1e9;
 
 
 int main(){
-    brokenCalc_Dp(2,3);
+    brokenCalc(2,3);
     cout<<minOperation<<"\n";
 }

@@ -92,20 +92,14 @@ ListNode* merge(ListNode* list1 , ListNode* list2){
 
 }
 //reverse LinkedList 
-ListNode* reverse(ListNode* &head){
- // three  pointer to revrse the LL
+ListNode* reverse(ListNode* head){
   ListNode* prev;
-  ListNode* curr;
-  ListNode* post;
-
-  curr = head;
   prev = NULL;
-
-  while(curr!=NULL){
-     post = curr->next;
-     curr->next = prev;
-     prev =curr;
-     curr = post;
+  while(head!=NULL){
+     ListNode* post = head->next;
+     head->next = prev;
+     prev =head;
+     head = post;
   }
   
   return prev;
@@ -125,12 +119,12 @@ ListNode* findMiddle(ListNode* &head){
   ListNode* removeNthFromEnd(ListNode* head, int n) {
            if(head==NULL || n == 0){return head;}
            ListNode* reverseList = reverse(head);
-           ListNode* deleteNodeList =  deleteNode(reverseList,n);
+           ListNode* deleteNodeList =  deleteNode_Recursive(reverseList,1,n);
            ListNode* originalList = reverse(deleteNodeList);
            return originalList;  
         
     }
-ListNode* deleteNode(ListNode* &head,int n){
+ListNode* deleteNode(ListNode* head,int n){
      int i=1;
      ListNode* prev;
      ListNode* ptr;
@@ -152,6 +146,22 @@ ListNode* deleteNode(ListNode* &head,int n){
      }
      return head;
 
+}
+
+ListNode* deleteNode_Recursive(ListNode* head,int i,int n){
+    // base case
+    if(head == NULL) return head;
+    
+    // edge case
+    if(i == 1){
+        head = head->next;
+        return head;
+    }
+
+    // recursive case
+    if(i+1 != n) head->next = deleteNode_Recursive(head->next,i+1,n);
+    else if(head->next != NULL) head->next = deleteNode_Recursive(head->next->next,i+2,n);
+    return head; 
 }
 
 };

@@ -10,8 +10,7 @@ using namespace std;
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        vector <int> Array{};
-        if(nums == Array){return NULL;}
+        if(nums.size() == 0){return -1;}
         int slow = 0;
         int fast = 0;
         while(true){
@@ -21,7 +20,6 @@ public:
                 break;
             }
         }
-        // cout<<slow<<"--"<<fast<<endl;
         int slow2 = 0;
         while(true){
           slow2= nums[slow2];

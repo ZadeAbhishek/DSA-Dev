@@ -4,8 +4,8 @@ using namespace std;
 
 bool check_sub_string(string a, string b)
 {
-    int l1 = size(a);
-    int l2 = size(b);
+    int l1 = a.size();
+    int l2 = b.size();
     int memo[l1][l2];
     
     for(auto i = 0 ; i < l1 ; i++){
@@ -26,9 +26,10 @@ bool check_sub_string(string a, string b)
     else return false;
 }
 
+
 int main() {
     string a = "Hacker Who Has Access To Your Operating System";
-    string b = "Hacker Who Has Access To Your Operating System";
+    string b = "Who";
     bool result = check_sub_string(a,b);
     if(result) cout<<"Contains SuBstring"<<"\n";
     else cout<<"Dont Contains SuBstring"<<"\n";

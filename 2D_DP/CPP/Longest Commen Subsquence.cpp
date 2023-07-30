@@ -1,6 +1,9 @@
-class Solution {
-public:
-    int longestCommonSubsequence(string text1, string text2) {
+#include<bits/stdc++.h>
+using namespace std;
+
+
+// optimised 
+int longestCommonSubsequence(string text1, string text2) {
         
         // idea is to use dp tabulation method
 
@@ -34,5 +37,32 @@ public:
         return string_table[size_text1-1][size_text2-1];
 
     }
+// more optimised
+int longest_common_subsequence_optimised(string a, string b){
+       
+       // size
+       int sizeA = a.size();
+       int sizeB = b.size();
+       
+       // we will do 1-index
+       vector<vector<int>> dp(sizeA+1,vector<int>(sizeB+1,0));
 
-};
+       vector<int> curr(sizeB+1,0);
+       vector<int> prev(sizeB+1,0);
+
+       for(int i = 1 ; i <= sizeA ; i++){
+        for(int j = 1 ; j <= sizeB ; j++){
+            if(a[i-1] == b[j-1]) curr[j] = 1 + prev[j-1];
+            else curr[j] = max(prev[j],curr[j-1]);
+        }
+        prev= curr;
+       }
+
+       return prev.back();
+}
+
+int main(){
+    string x = "brute";
+    string y = "groot"; 
+    cout<<longest_common_subsequence_optimised(x,y)<<"\n";
+}

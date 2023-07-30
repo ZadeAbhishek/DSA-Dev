@@ -92,7 +92,9 @@ vector<int> computeLPSArray(string s)
                 i++;
             }
         }
+        cout<<LPS[i]<<" ";
     }
+    cout<<"\n";
     return LPS;
 }
 int solve(string s)
@@ -113,7 +115,7 @@ int minChar4(string str){
 //{ Driver Code Starts.
 int main()
 {
-	string s = "abc";
+	string s = "bb";
     cout<<minChar4(s)<<"\n";
 
 }

@@ -4,7 +4,7 @@
 ### what is Hash Table?
 Hash table (also, hash map) is a data structure that basically maps keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the corresponding value can be found.
 
-[My Hash Table Implementation](https://github.com/ZadeAbhishek/DSA-Dev/tree/master/Array_and_Hashing/HashMap%20Implementation)
+[My Hash Table Implementation](https://github.com/ZadeAbhishek/DSA-Dev/blob/master/Array_and_Hashing/HashMap%20Implementation/706.%20Design%20HashMap.cpp)
 
 
 ### Operations Complexity

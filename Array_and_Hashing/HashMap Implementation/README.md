@@ -4,7 +4,7 @@
 ### what is Hash Table?
 Hash table (also, hash map) is a data structure that basically maps keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the corresponding value can be found.
 
-[My Hash Table Implementation]()
+[My Hash Table Implementation](./"706. Design HashMap.cpp")
 
 
 ### Operations Complexity
@@ -161,3 +161,126 @@ There are mainly two methods to handle collision:
 
 * Separate Chaining 
 * Open Addressing 
+
+
+## Separate Chaining
+* When we use chaining to resolve collisions, we simply allow each slot in the hash table to accept more than one value.
+* The linked list data structure is used to implement this technique. So what happens is, when multiple elements are hashed into the same slot index, then these elements are inserted into a singly-linked list which is known as a chain. 
+
+#### Advantages of Separate Chaining
+* Simple to implement. 
+* Hash table never fills up, we can always add more elements to the chain. 
+* Less sensitive to the hash function or load factors. 
+* It is mostly used when it is unknown how many and how frequently keys may be inserted or deleted. 
+
+#### Disadvantages of Separate Chaining
+The cache performance of chaining is not good as keys are stored using a linked list. Open addressing provides better cache performance as everything is stored in the same table. 
+Wastage of Space (Some Parts of the hash table are never used) 
+If the chain becomes long, then search time can become O(n) in the worst case
+Uses extra space for links.
+
+#### Performance of Chaining
+```
+m = Number of slots in hash table
+n = Number of keys to be inserted in hash table
+
+Load factor α = n/m
+Expected time to search = O(1 + α)
+Expected time to delete = O(1 + α)
+
+Time to insert = O(1)
+Time complexity of search insert and delete is O(1) if  α is O(1)
+```
+#### Data Structures For Storing Chains: 
+##### Linked lists
+  * Search: O(l) where l = length of linked list
+  * Delete: O(l)
+  * Insert: O(l)
+  * Not cache friendly
+##### Dynamic Sized Arrays ( Vectors in C++, ArrayList in Java, list in Python)
+* Search: O(l) where l = length of array
+* Delete: O(l)
+* Insert: O(l)
+* Cache friendly
+##### Self Balancing BST ( AVL Trees, Red-Black Trees)
+
+* Search: O(log(l)) where l = length of linked list
+* Delete: O(log(l))
+* Insert: O(l)
+* Not cache friendly
+
+## Open Addressing
+Like separate chaining, open addressing is a method for handling collisions. In Open Addressing, all elements are stored in the hash table itself. So at any point, the size of the table must be greater than or equal to the total number of keys (Note that we can increase table size by copying old data if needed). This approach is also known as closed hashing. This entire procedure is based upon probing.
+
+```
+Insert(k): Keep probing until an empty slot is found. Once an empty slot is found, insert k. 
+
+Search(k): Keep probing until the slot’s key doesn’t become equal to k or an empty slot is reached. 
+
+Delete(k): Delete operation is interesting. If we simply delete a key, then the search may fail. So slots of deleted keys are marked specially as “deleted”. 
+The insert can insert an item in a deleted slot, but the search doesn’t stop at a deleted slot. 
+
+```
+### Different ways of Open Addressing
+
+#### Linear Probing
+In linear probing, the hash table is searched sequentially that starts from the original location of the hash. If in case the location that we get is already occupied, then we check for the next location.
+
+```
+The function used for rehashing is as follows: rehash(key) = (n+1)%table-size. 
+
+```
+##### Applications
+* Symbol Tables
+* Caching
+* Databases
+* Compiler design
+* Spell Checking
+
+#### Challenges in Linear Probing 
+* Primary Clustering -> One of the problems with linear probing is Primary clustering, many consecutive elements form groups and it starts taking time to find a free slot or to search for an element. 
+
+* Secondary Clustering -> Secondary clustering is less severe, two records only have the same collision chain (Probe Sequence) if their initial position is the same.
+
+#### Quadratic Probing 
+If you observe carefully, then you will understand that the interval between probes will increase proportionally to the hash value. Quadratic probing is a method with the help of which we can solve the problem of clustering that was discussed above.  This method is also known as the mid-square method. In this method, we look for the i2‘th slot in the ith iteration. We always start from the original hash location. If only the location is occupied then we check the other slots.
+
+```
+let hash(x) be the slot index computed using hash function.  
+
+If slot hash(x) % S is full, then we try (hash(x) + 1*1) % S
+If (hash(x) + 1*1) % S is also full, then we try (hash(x) + 2*2) % S
+If (hash(x) + 2*2) % S is also full, then we try (hash(x) + 3*3) % S
+
+```
+
+#### Double Hashing 
+The intervals that lie between probes are computed by another hash function. Double hashing is a technique that reduces clustering in an optimized way. In this technique, the increments for the probing sequence are computed by using another hash function. We use another hash function hash2(x) and look for the i*hash2(x) slot in the ith rotation. 
+
+```
+let hash(x) be the slot index computed using hash function.  
+
+If slot hash(x) % S is full, then we try (hash(x) + 1*hash2(x)) % S
+If (hash(x) + 1*hash2(x)) % S is also full, then we try (hash(x) + 2*hash2(x)) % S
+If (hash(x) + 2*hash2(x)) % S is also full, then we try (hash(x) + 3*hash2(x)) % S
+```
+Example \
+Insert the keys 27, 43, 692, 72 into the Hash Table of size 7. where first hash-function is h1​(k) = k mod 7 and second hash-function is h2(k) = 1 + (k mod 5)
+
+#### Performance of Open Addressing
+
+```
+m = Number of slots in the hash table
+
+n = Number of keys to be inserted in the hash table
+
+ Load factor α = n/m  ( < 1 )
+
+Expected time to search/insert/delete < 1/(1 – α) 
+
+So Search, Insert and Delete take (1/(1 – α)) time
+```
+
+### Commonly used hash functions
+* SHA (Secure Hash Algorithm)
+* CRC (Cyclic Redundancy Check)

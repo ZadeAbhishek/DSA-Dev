@@ -11,7 +11,6 @@ public:
     }
     
     void Sum(vector<int>& candidates, int target,int i,vector<vector<int>> &result,int sum,vector<int> &no) {
-        cout<<"sum:"<<sum<<endl;
         if(sum > target){
                return;
            }

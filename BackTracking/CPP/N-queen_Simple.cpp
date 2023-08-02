@@ -53,17 +53,24 @@ bool nQueen(vector<vector<int>> &arr,int col,vector<vector<vector<int>>> &res){
     }
     for(auto i = 0 ; i < arr.size() ; i++){
         if(check(col,i,arr.size())){
-            if(DiagonalD.count(col+i)) DiagonalD[col+i]=true;
-            DiagonalD.insert({col+i,true});
-            if(DaigonalU.count((i-col)+((arr.size()) - 1))) DaigonalU[(i-col)+((arr.size()) - 1)]=true;
-            DaigonalU.insert({(i-col)+((arr.size()) - 1),true});
-            if(column.count(i)) column[i] = true;
-            column.insert({i,true});
+           
+            
+            DiagonalD[col+i]=true;  
+
+            DaigonalU[(i-col)+((arr.size()) - 1)]=true;
+
+            column[i] = true;
+
             arr[col][i] = 1;
+
             if(nQueen(arr,col+1,res)) return true;
+
             arr[col][i] = 0;
+
             DaigonalU[(i-col)+((arr.size()) - 1)] = false;
+
             DiagonalD[col+i] = false;
+            
             column[i] = false;
 
         }

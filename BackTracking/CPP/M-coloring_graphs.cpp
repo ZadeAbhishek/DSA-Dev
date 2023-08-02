@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-
 using namespace std;
  bool isValid(int CurrNode, int currColor ,bool graph[101][101], int m, int n, int color[]){
         for(int i = 0 ;  i < n ; i++){

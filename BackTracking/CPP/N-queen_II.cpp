@@ -4,23 +4,34 @@
 Given an integer n, return the number of distinct solutions to the n-queens puzzle.
 */
 
+#include<bits/stdc++.h>
+using namespace std;
 
 class Solution {
+	vector<bool> col, diag, anti_diag;
 public:
     int totalNQueens(int n) {
-	vector<bool> col(n), diag(2*n-1), anti_diag(2*n-1);
-	return solve(col, diag, anti_diag, 0);
+	col.resize(n);
+	diag.resize(2*n-1);
+	anti_diag.resize(2*n-1);	
+	return solve(0);
 }
    
-int solve(vector<bool>& col, vector<bool>& diag, vector<bool>& anti_diag, int row) {
-	int n = size(col), count = 0;
+int solve(int row) {
+	int n = col.size(), count = 0;
     if(row == n) return 1;
 	for(int column = 0; column < n; column++)           
 		if(!col[column] && !diag[row + column] && !anti_diag[row - column + n - 1]){ 
 			col[column] = diag[row + column] = anti_diag[row - column + n - 1] = true;
-			count += solve(col, diag, anti_diag, row + 1); 
+			count += solve(row + 1); 
 			col[column] = diag[row + column] = anti_diag[row - column + n - 1] = false; 
 		}                                
 	return count;
 }
 };
+
+
+int main(){
+	Solution s;
+	cout<<s.totalNQueens(10)<<"\n";
+}

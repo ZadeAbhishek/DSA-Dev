@@ -1,64 +1,107 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+void printVector(vector<int> result)
+{
+  for (int i = 0; i < result.size(); i++)
+  {
+    cout << result[i] << " ";
+  }
 
-void printVector(vector<int> result){
-         for(int i = 0;i<result.size();i++){
-         cout<<result[i]<<" ";
-        }
-        cout<<"\n";
+  cout << "\n";
+}
+
+
+
+class Solution
+{
+  void permutation(vector<int> &nums, vector<vector< int >> &result, vector< int > &vis, vector< int > &temp)
+  {
+   	// base case
+    if (temp.size() == nums.size())
+    {
+      result.push_back(temp);
+      return;
     }
-class Solution { 
-    vector<int> cache;
-    public:
-     Solution(int size){
-      for(auto i = 0 ; i < size ; i++){
-        cache.push_back(0);
+
+    for (int i = 0; i < nums.size(); i++)
+    {
+      if (vis[i] == 0)
+      {
+        vis[i] = 1;
+        temp.push_back(nums[i]);
+        permutation(nums, result, vis, temp);
+        temp.pop_back();
+        vis[i] = 0;
       }
     }
-    vector<vector<int>> Permutation(vector<int> &list){
-        vector<int> temp;
-        solve(list,temp);
-        return result;
-    }
-    private:
-    vector<vector<int>> result;
-    void solve(vector<int> &list,vector<int> &temp){
-        if(temp.size() == list.size()){
-            result.push_back(temp);
-            printVector(temp);
-            return;
-        }
-        for(auto i = 0; i < list.size() ; i++){
-            cout<<"i:"<<i<<"\n";
-            if(cache[i] == 0){
-            temp.push_back(list[i]);
-            cache[i] = 1;
-            solve(list,temp);
-            cout<<"i:"<<i<<"\n";
-            cache[i] = 0;
-            temp.pop_back();
-            
-        }
-            
-    }
+
     return;
-        
+  }
+
+  public:
+    vector<vector < int>> permute(vector<int> &nums)
+    {
+      vector<vector < int>> result;
+      vector<int> vis(nums.size() + 1, 0);
+      vector<int> temp;
+      permutation(nums, result, vis, temp);
+      return result;
     }
 };
 
-int main (){
-    vector<int>  s = {2,2,3,3};
-    Solution* solve = new Solution(s.size());    
-    vector<vector<int>> result = solve->Permutation(s);
-    cout<<"[ ";
-    for(auto i = 0;i<result.size();i++){
-            cout<<"[ ";
-        for(auto j = 0;j<result[i].size();j++){
-            cout<<result[i][j]<<" ";
-        }
-         cout<<"]";
+
+
+class Solution
+{
+  vector<vector < int>> result;
+  void permutation(vector<int> &nums, int curr)
+  {
+    if (curr == nums.size())
+    {
+      result.push_back(nums);
+      return;
     }
-    cout<<" ]";
-    cout<<endl;
+
+    for (int i = curr; i < nums.size(); i++)
+    {
+      swap(nums[curr], nums[i]);
+      permutation(nums, curr + 1);
+      swap(nums[curr], nums[i]);
+    }
+
+    return;
+  }
+
+  public:
+
+    vector<vector < int>> permute(vector<int> &nums)
+    {
+      permutation(nums, 0);
+      return result;
+    }
+};
+
+
+
+int main()
+{
+  vector<int> s = { 2, 2, 3, 3 };
+
+  Solution *solve = new Solution();
+  vector<vector < int>> result = solve->permute(s);
+  cout << "[ ";
+  for (auto i = 0; i < result.size(); i++)
+  {
+    cout << "[ ";
+    for (auto j = 0; j < result[i].size(); j++)
+    {
+      cout << result[i][j] << " ";
+    }
+
+    cout << "]";
+  }
+
+  cout << " ]";
+  cout << endl;
 }

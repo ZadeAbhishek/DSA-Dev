@@ -69,7 +69,6 @@ int right(int x, int y)
 	if (area[x][y] == 1 || area[x][y] == 3 || area[x][y] == 4 || area[x][y] == 5) return true;
 	return false;
 }
-
 int top(int x, int y)
 {
 	if (area[x][y] == 1 || area[x][y] == 2 || area[x][y] == 4 || area[x][y] == 7) return true;

@@ -6,7 +6,7 @@ This GitHub repository provides a comprehensive collection of Data Structures an
 ### INDEX
 
 * [Problem Solving Techniques](#problem-solving-strategies)
-* [Setup Guide](#setup-guide)
+* [Repository Setup Guide](#setup-guide)
 
 ## Problem Solving strategies
 

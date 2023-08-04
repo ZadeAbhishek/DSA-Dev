@@ -1,5 +1,5 @@
 
-# DSA-DEV 
+# Data Structures and Algorithm + Development Projects.
 
 This GitHub repository provides a comprehensive collection of Data Structures and Algorithms (DSA) concepts along with solutions to common coding questions. Additionally, it includes various React.js projects to demonstrate practical implementation and usage of these DSA concepts in real-world scenarios.
 

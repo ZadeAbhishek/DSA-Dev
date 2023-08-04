@@ -8,6 +8,9 @@ This GitHub repository provides a comprehensive collection of Data Structures an
 * [Problem Solving Techniques](#problem-solving-strategies)
 * [Repository Setup Guide](#setup-guide)
 
+## 🚀 About Me
+I am a fresher looking for an SDE Role. I am a Google Summer of Code 2021 participant having skills in Web-Development, and Machine learning also worked on various projects such as MQTT servers using Flutter.
+
 ## Problem Solving strategies
 
 ### Recursive and Dynamic Programming

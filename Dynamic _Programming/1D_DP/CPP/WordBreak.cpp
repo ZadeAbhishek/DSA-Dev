@@ -49,6 +49,21 @@ bool solve2(std::string s){
 
 }
 
+ bool wordBreak(std::string s, std::vector<std::string>& wordDict) {
+        std::unordered_set<std::string>word_set(wordDict.begin(),wordDict.end());
+        int n=s.size();
+        std::vector<bool>dp(n+1,0);
+        dp[0]=1;
+        for(int i=0;i<n;i++){
+            if(!dp[i])continue;
+            for(int j=i+1;j<=n;j++){
+                if( word_set.count(s.substr(i,j-i)))
+                dp[j]=1,std::cout<<j<<"\n";
+            }
+        }
+        return dp[n];
+}
+
 bool solve3(std::string s){
     //base case
     if(s.size() == 1 && hash.count(s) && hash[s] == true) return true;
@@ -72,9 +87,9 @@ bool solve3(std::string s){
 }
 
 int main(){
-    std::string s ="aaaaaaa";
-    std::vector<std::string> wordDict = {"aaa","aaaa"};
-    for(auto s : wordDict) hash.insert({s,true});
-    setHash.insert(wordDict.begin(),wordDict.end());
-    std::cout<<solve2(s);
+    std::string s ="leetcode";
+    std::vector<std::string> wordDict = {"leet","code"};
+    // for(auto s : wordDict) hash.insert({s,true});
+    // setHash.insert(wordDict.begin(),wordDict.end());
+    std::cout<<wordBreak(s,wordDict);
 }

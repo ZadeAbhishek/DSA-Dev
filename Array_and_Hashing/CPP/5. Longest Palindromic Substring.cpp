@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
 
@@ -7,6 +10,7 @@ public:
      // idea is to use matrix here 
      vector<vector<int>> tab(s.size(),vector<int>(s.size(),0));
      string res;
+     int start = 0;
      long max = INT_MIN;
 
      for(auto diff = 0 ; diff < size(s) ; diff++){
@@ -24,12 +28,15 @@ public:
             if(tab[i][j]){
                 if((j-i+1) > max){
                 
-                res = s.substr(i,j-i+1);
+                start = i;
                 max = (j-i+1);
                 }
             }
         }
      }
+ 
+     if(max != INT_MAX) res = s.substr(start,max); 
+
      return res;     
     }
 };
@@ -120,3 +127,6 @@ public:
         return s.substr(starting_index, max_len);
     }
 }; 
+
+
+int main(){}

@@ -1,5 +1,9 @@
 // https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/solutions/3602458/beats-100-c-python-solutions-sort-unordered-set-set/
 
+#include<bits/stdc++.h>
+using namespace std;
+
+
 class Solution {
 public:
     bool canMakeArithmeticProgression(vector<int>& arr) {
@@ -29,3 +33,5 @@ public:
         return set.size() == n;
     }
 };
+
+int main(){}

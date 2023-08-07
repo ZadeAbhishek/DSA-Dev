@@ -1,3 +1,5 @@
+// this is greedy approch
+
 #include <bits/stdc++.h>
 using namespace std;
 

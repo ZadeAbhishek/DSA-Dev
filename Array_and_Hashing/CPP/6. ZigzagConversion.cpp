@@ -1,6 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
-    string convert(string s, int numRows) {
+    string convert(string s, int numRows){
         if(numRows == 1) return s;
         int index = 0;
         vector<string> list(numRows);
@@ -32,3 +35,5 @@ And then read line by line: "PAHNAPLSIIGYIR"
 
 
 */
+
+int main(){}

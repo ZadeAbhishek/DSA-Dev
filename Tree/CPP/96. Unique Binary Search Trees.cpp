@@ -6,7 +6,7 @@ class Solution {
 public:
     int dp[20] = {0};
     int numTrees(int n) {
-        // basically catalan number formula
+        // basically catalan number formula 
 
         // base case
         if(n <= 1) return 1;

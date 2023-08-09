@@ -1,3 +1,5 @@
+/* https://www.youtube.com/watch?v=MjpAAE3-hYg&ab_channel=CherryCoding%5BIIT-G%5D */
+
 #include<bits/stdc++.h>
 using namespace std;
 

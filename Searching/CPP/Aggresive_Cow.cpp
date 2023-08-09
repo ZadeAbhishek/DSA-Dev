@@ -48,9 +48,14 @@ int can_We_Place_Cows(std::vector<int> &stalls, int k){
 }
 
 
-int main(){
+int main() {
+    std::vector<int> stalls = {1, 2, 8, 4, 9};
     int k = 3;
-    std::vector<int> stalls = {1,3,5,8,10};
-    std::cout<<can_We_Place_Cows(stalls,k)<<"\n";
+    int result = can_We_Place_Cows(stalls, k);
+    if (result != -1) {
+        std::cout << "Maximum minimum distance between cows for " << k << " cows is: " << result << std::endl;
+    } else {
+        std::cout << "Could not place " << k << " cows with the given stall configuration." << std::endl;
+    }
+    return 0;
 }
-

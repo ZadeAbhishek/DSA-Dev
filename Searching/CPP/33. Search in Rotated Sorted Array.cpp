@@ -18,28 +18,68 @@ Input: nums = [1], target = 0
 Output: -1
 */
 
+#include <iostream>
+#include <vector>
+
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
+    // Function to search for the target element in the rotated sorted array
+    int search(std::vector<int>& nums, int target) {
         int start = 0;
         int end = nums.size() - 1;
-        if(nums.size() == 0) return -1;
-        if(start == end){
-            if(nums[start] == target) return start;
+        
+        // Check if the array is empty, return -1 if empty
+        if (nums.size() == 0) return -1;
+
+        // Check if there is only one element in the array
+        if (start == end) {
+            if (nums[start] == target) return start; // Return the index if target found, else return -1
             else return -1;
         }
-        while(start <= end){
-            int mid = (start + end)/2;
-            if(nums[mid] == target) return mid;
-            if(nums[start] <= nums[mid]){
-                if(nums[start]<=target && nums[mid]>=target) end = mid -1;
-                else start = mid + 1;
-            }
-            else{
-                if(nums[mid]<=target && nums[end]>=target) start = mid + 1;
-                else end = mid - 1;
+
+        // Binary search algorithm
+        while (start <= end) {
+            int mid = (start + end) / 2; // Calculate the middle index
+
+            if (nums[mid] == target) return mid; // Return the index if target found
+
+            // Check if the left half of the array is sorted
+            if (nums[start] <= nums[mid]) {
+                // Check if the target is within the sorted left half
+                if (nums[start] <= target && nums[mid] >= target) {
+                    end = mid - 1; // Update the end index to search in the left half
+                } else {
+                    start = mid + 1; // Update the start index to search in the right half
+                }
+            } else { // If the right half is sorted
+                // Check if the target is within the sorted right half
+                if (nums[mid] <= target && nums[end] >= target) {
+                    start = mid + 1; // Update the start index to search in the right half
+                } else {
+                    end = mid - 1; // Update the end index to search in the left half
+                }
             }
         }
-        return -1;
+
+        return -1; // Return -1 if the target is not found in the array
     }
 };
+
+int main() {
+    Solution solution;
+
+    std::vector<int> nums = {4, 5, 6, 7, 0, 1, 2}; // Sample rotated sorted array
+    int target = 0; // Target element to search for
+
+    int result = solution.search(nums, target); // Call the search function to find the target
+
+    // Print the result
+    if (result != -1) {
+        std::cout << "Target element " << target << " found at index: " << result << std::endl;
+    } else {
+        std::cout << "Target element " << target << " not found in the array." << std::endl;
+    }
+
+    return 0;
+}
+

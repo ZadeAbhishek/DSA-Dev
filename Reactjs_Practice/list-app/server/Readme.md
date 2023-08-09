@@ -1,0 +1,10 @@
+- Created this server folder 
+- add data js folder
+- add server folder
+- to import data to server
+- npm init
+- add "type": "module" to pakage.json
+- add npm install cors --save
+- add nodemon 
+- run server
+- make sure to create jaon and send

@@ -1,4 +1,9 @@
 // we can optimised more of this 
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
 
 class Solution {
 public:
@@ -26,11 +31,11 @@ public:
         
         for(auto x : p) aux_p[(int)x]++; // compelte aux with p string
         
-        int x = 0 , y = size(p);
+        int x = 0 , y = p.size();
         
-        while(y <= size(s))
+        while(y <= s.size())
         {
-           bool res = check_anagram(s.substr(x,size(p)),aux_p);
+           bool res = check_anagram(s.substr(x,p.size()),aux_p);
             
             if(res) {
                 result.push_back(x);
@@ -45,5 +50,22 @@ public:
     }
 };
 
+
+int main() {
+    Solution solution;
+
+    string s = "cbaebabacd";
+    string p = "abc";
+
+    vector<int> result = solution.findAnagrams(s, p);
+
+    cout << "Indices of anagram occurrences: ";
+    for (int index : result) {
+        cout << index << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
 
 // optimised version

@@ -4,12 +4,28 @@ Welcome to this GitHub repository that provides a comprehensive collection of Da
 
 ### INDEX
 
+* [Time Complexity Contraints Table](#time-complexity-contraints-table)
 * [Problem Solving Techniques](#problem-solving-strategies)
 * [Repository Setup Guide](#setup-guide)
 
 ## 🚀 About Me
 
 I am a fresher looking for an SDE Role. I am a Google Summer of Code 2021 participant with skills in Web Development and Machine Learning. I have also worked on various projects, such as MQTT servers using Flutter.
+
+
+## Time Complexity Contraints Table
+
+| Contraints               | Time Complexity |
+| --------                 | -------  |
+| 10<sup>18</sup>          | O(logN)  |
+| 10<sup>8</sup>           | O(N)     |
+| 10<sup>6</sup>           | O(NlogN) |
+| 10<sup>4</sup>           | O(N<sup>2</sup>)|
+| 500                      | O(N<sup>3</sup>)|
+| 85-90                    | O(N<sup>4</sup>)|
+| 20                       | O(2<sup>N</sup>)|
+| 11                       | O(N!)|
+
 
 ## Problem Solving Strategies
 

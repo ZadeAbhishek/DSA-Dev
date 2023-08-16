@@ -61,7 +61,7 @@ void printLinkedList(ListNode* head) {
 }
 
 int main() {
-    Solution2 solution;
+    Solution solution;
     int arr[] = {1, 4, 3, 2, 5, 2};
     int n = sizeof(arr) / sizeof(arr[0]);
 

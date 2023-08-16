@@ -89,6 +89,9 @@ Save intermediate results or solutions to avoid redundant computations and look 
 
 Exploit any symmetry in the input or solution space to reduce the search space and optimize the problem-solving process.
 
+## JavaScript Event Loop
+![Event LOOP](./StudyPDFs/EventLoop.gif)
+
 ## Setup Guide
 
 ### From Vscode Extension

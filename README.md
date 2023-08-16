@@ -6,6 +6,7 @@ Welcome to this GitHub repository that provides a comprehensive collection of Da
 
 * [Time Complexity Contraints Table](#time-complexity-contraints-table)
 * [Problem Solving Techniques](#problem-solving-strategies)
+* [JavaScript Event Loop Diagram](#javascript-event-loop)
 * [Repository Setup Guide](#setup-guide)
 
 ## 🚀 About Me

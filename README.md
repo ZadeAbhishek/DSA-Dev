@@ -65,7 +65,7 @@ Build Docker Image Windows
 Start the Docker Image
 
 ```bash
-   sudo docker run -it --rm -v ${pwd}:/work <ImageName/Id>
+   docker run -it --rm -v ${pwd}:/work <ImageName/Id>
 ```
 
 Finally open File in Remote server Vscode

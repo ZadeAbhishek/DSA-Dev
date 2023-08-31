@@ -6,7 +6,7 @@ using namespace std;
         unordered_set<string> hash(wordList.begin(),wordList.end()); // this is set
         queue<pair<string,int>> q;
         q.push({beginWord,1});
-        hash.erase(beginWord);
+        hash.erase(beginWord); // earse so we dont get back to same word
         while(!q.empty()){
             auto c = q.front();
             q.pop();
@@ -30,5 +30,5 @@ using namespace std;
 
 int main(){
     vector<string> word = {"hot","dot","dog","lot","log","cog"};
-    cout<<ladderLength("hit","cog",word);
+    
 }

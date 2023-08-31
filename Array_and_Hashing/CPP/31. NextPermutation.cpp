@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
@@ -26,3 +29,4 @@ public:
 
 
 // Watch striver video its easy inttion
+int main(){}

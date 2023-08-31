@@ -1,5 +1,10 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
 class Solution {
-  public: void uniquePathsIII(vector < vector < int >> & grid, int start_x, int start_y, int end_x, int end_y, int walkPath_count, int & count) {
+  public: 
+  void uniquePathsIII(vector < vector < int >> & grid, int start_x, int start_y, int end_x, int end_y, int walkPath_count, int & count) {
 
     //edge case or visited or obstacle all case just return
     if (start_x < 0 || start_y < 0 || start_x >= size(grid) || start_y >= size(grid[start_x]) || (grid[start_x][start_y] == -1) || grid[start_x][start_y] == 3) return;
@@ -49,3 +54,5 @@ class Solution {
     return count;
   }
 };
+
+int main(){}

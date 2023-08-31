@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            min-height: 100vh; /* Ensure full height */
+            background-color: #f0f0f0; /* Light grey background */
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column; /* Stack form elements */
+            padding: 20px; /* Reduced padding */
+            background-color: grey;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+        }
+
+        .form label {
+            margin-bottom: 5px; /* Add space below labels */
+        }
+
+        .form input {
+            padding: 8px;
+            margin-bottom: 15px; /* Add space below inputs */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form id="forms">
+            <!-- Email input field -->
+            <label for="fname">Email:</label><br>
+            <input type="email" id="email"><br>
+
+            <!-- Password input field -->
+            <label for="password">Password:</label><br>
+            <input type="password" id="password"><br>
+        </form>
+        <!-- Submit button -->
+        <button id="submit">Submit</button>
+    </div>
+</body>
+<script>
+    function submitcall() {
+        // Gather form data
+        const data = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+        };
+
+        // Convert data to JSON format
+        const blob = JSON.stringify(data);
+
+        // API endpoint URL
+        const url = "http://localhost:8080/userdata";
+
+        // Send POST request using Fetch API
+        fetch(url, {
+            method: 'post',
+            body: blob,
+            mode: 'cors',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                alert("Submitted");
+            } else {
+                throw new Error('Something went wrong');
+            }
+        })
+        .catch((err) => {
+            alert(`${err}`);
+        });
+    }
+
+    // Attach event listener to the submit button
+    const submit = document.getElementById("submit").addEventListener("click", submitcall);
+</script>
+</html>

@@ -1,7 +1,16 @@
 // basically swap alternate node
 
 // without swaping values
-class Solution {
+#include<bits/stdc++.h>
+using namespace std;
+
+
+struct ListNode{
+    ListNode* next;
+    int val;
+};
+
+class Solution1 {
 public:
     ListNode* swapPairs(ListNode* head) {
        if(!head || !head->next) return head;
@@ -24,24 +33,28 @@ public:
 };
 
 // recussive solution
-class Solution {
+class Solution2 {
 public:
     ListNode* swapPairs(ListNode* head) {
+        
+        // base case
         if(head == NULL || head->next == NULL) return head;
+       
+       // 1 2 3 4 5 NULL
 
-        ListNode * temp = head->next->next;
-        ListNode * newHead = head->next;
+        ListNode * temp = head->next->next;  // temp = 3 part from were we want to start swap
+        ListNode * newHead = head->next; // new head
+ 
+        head->next->next = head; // 2 -> 1
+        head->next =  swapPairs(temp); // 1 -> (swaped elements)
 
-        head->next->next = head;
-        head->next =  swapPairs(temp);
-
-        return newHead;
+        return newHead; // return new head
     }
 };
 
 
 // with swaping (there might be condition in exam dont swap value if that is availabe use this)
-class Solution {
+class Solution3 {
 public:
     ListNode* swapPairs(ListNode* head) {
         if(head == NULL || head->next == NULL)return head;
@@ -56,3 +69,31 @@ public:
         return head;
     }
 };
+
+
+void operator<<(ostream &Cout , ListNode* head){
+    while(head != NULL){
+        Cout<<head->val<<" ";
+        head = head->next;
+    }
+    cout<<"\n";
+    return;
+}
+
+int main(){
+    int siz;
+    cin>>siz;
+    vector<ListNode*> temp(siz);
+    temp[0] = new ListNode;
+    cin>>temp[0]->val;
+    for(int i = 1 ; i < siz ; i++){
+        
+        temp[i] = new ListNode;
+        cin>>temp[i]->val;
+        temp[i-1]->next = temp[i];
+    }
+    temp[siz-1]->next = NULL;
+    cout<<temp[0];
+    Solution2 *solve = new Solution2();
+    cout<<solve->swapPairs(temp[0]);
+}

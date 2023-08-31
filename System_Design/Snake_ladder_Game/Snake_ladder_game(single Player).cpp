@@ -27,7 +27,7 @@ class Player;
 class Dice;
 
 class Dice {
-    vector < int > dice = {1,2,3,4,5,6};
+    int dice_size = 6;
 
     public:
         int rollDice();
@@ -113,16 +113,16 @@ void Board::startGame() {
             break;
         }
 
-        cout << players[chance].getName() << " currPosition:" << curr_position << " nextPossition:" << next_postion << endl;
-
         if (ladder.count(next_postion)) players[chance].setPostion(ladder[next_postion]);
         else if (snake.count(next_postion)) players[chance].setPostion(snake[next_postion]);
         else players[chance].setPostion(next_postion);
 
+        cout << players[chance].getName() << " From:" <<curr_position<<" -------> "<< "To:" <<players[chance].getPosition()<< endl;
+
         chance = (chance + 1) % players.size();
     }
 
-    cout << "Winner is:" << Winner_name << endl;
+    cout << "Winner is: " << Winner_name << endl;
 }
 
 string Player::getName() {
@@ -133,11 +133,6 @@ void Board::addPlayer(Player player) {
     this -> players.push_back(player);
 }
 
-int random(int low, int high) {
-    srand((unsigned int) time(0));
-    if (low > high) return high;
-    return low + (std::rand() % (high - low + 1));
-}
 
 int Dice::rollDice() {
 
@@ -145,15 +140,11 @@ int Dice::rollDice() {
 
     int roll;
     int min = 1; // the min number a die can roll is 1
-    int max = this -> dice.size(); // the max value is the die size
+    int max = dice_size; // the max value is the die size
 
-    unsigned seed;
-    seed = time(0);
-    srand(seed);
-
-    roll = rand() % (max - min + 1) + min;
-
-    return roll;
+    random_device rd;
+    uniform_int_distribution<int> dice(min,max);
+    return dice(rd);
 
 }
 
@@ -161,7 +152,6 @@ void Player::setPostion(int position) {
     this -> position = position;
 }
 int Player::getPosition() {
-    cout<<this->position<<endl;
     return this -> position;
 }
 

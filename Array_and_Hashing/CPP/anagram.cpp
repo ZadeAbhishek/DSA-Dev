@@ -27,9 +27,9 @@ public:
      // anagram so idea is to use two array of 2 * 128 bytes 
     signed int arr_string[128] = { 0 }; // sc->o(n);
 
-    for(auto iterator : s) arr_string[(signed int)iterator]++; //T(size(s))
+    for(auto &iterator : s) arr_string[(int)iterator]++; //T(size(s))
 
-    for(auto iterator : t) arr_string[(signed int)iterator]--; //T(size(t))
+    for(auto &iterator : t) arr_string[(int)iterator]--; //T(size(t))
 
     for(auto i = 0 ; i < 128 ; i++) if(arr_string[i] != 0) return false; // T(128) 
 
@@ -41,7 +41,7 @@ public:
 
 int main (){
      string  s = "Aabbcccc";
-     string  t = "Aabbcccc"; 
+     string  t = "Aabbccc"; 
     Solution* solve = new Solution();    
     bool result = solve->isAnagram_2(s,t);
     cout<<result<<" "<<endl;

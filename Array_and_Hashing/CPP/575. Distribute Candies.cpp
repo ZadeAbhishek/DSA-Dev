@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){}
 class Solution {
 public:
     int distributeCandies(vector<int>& candyType) {
@@ -13,3 +12,5 @@ public:
         return r;
     }
 };
+
+int main(){}

@@ -46,9 +46,9 @@ public:
 
         int maxx = INT_MIN;
 
-        for(auto x : nums) hash.insert(x);
+        for(auto &x : nums) hash.insert(x);
 
-        for(auto x : nums){
+        for(auto &x : nums){
             int count = 1;
             while(hash.find(x+1) != hash.end()){
                  count++;

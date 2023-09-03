@@ -21,7 +21,7 @@ public:
         string temp = "";  
 
         // iterate over s
-        for(auto it = 0 ; it < size(s) ; it++)
+        for(auto it = 0 ; it < s.size() ; it++)
         {
             
             
@@ -58,7 +58,7 @@ public:
         }
         // if size of pattern is large than s and word are correctly map then is migh create problem
         // so to check this we add this line
-        if(pattern_ptr != size(pattern)) return false; 
+        if(pattern_ptr != pattern.size()) return false; 
         
         // everythinh good return true
         return true;

@@ -160,11 +160,7 @@ docker build . -t <ImageName/Id>
 ### Start the Docker Image:
 
 ```bash
-<<<<<<< HEAD
-   docker run -it --rm -v ${pwd}:/work <ImageName/Id>
-=======
-sudo docker run -it --rm -v ${pwd}:/work <ImageName/Id>
->>>>>>> a20268419ad84c0ad0b129b2ca70320a25c46274
+docker run -it --rm -v ${pwd}:/work <ImageName/Id>
 ```
 
 ## Additional Notes

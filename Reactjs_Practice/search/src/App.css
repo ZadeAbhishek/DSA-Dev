@@ -1,0 +1,32 @@
+.App {
+    text-align: center;
+}
+
+.search {
+    width: 40%;
+    height: 2rem;
+    margin-top: 20px;
+}
+
+:hover {
+    border-color: rgb(44, 44, 44);
+}
+
+.grid {
+    text-align: center;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 50px;
+    padding: 10%;
+    padding-top: 10px;
+}
+
+.grid-child {
+    text-align: center;
+    margin-top: 5%;
+    height: auto;
+    width: 90%;
+    border: 1px solid;
+    border-color: black;
+}

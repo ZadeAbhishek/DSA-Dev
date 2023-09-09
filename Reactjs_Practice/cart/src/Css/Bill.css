@@ -1,0 +1,31 @@
+.bill {
+    display: block;
+    overflow: hidden;
+    border-collapse: collapse;
+    box-shadow: 0px 10px 10px #ccc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    margin-right: 60px;
+    overflow-x: auto;
+    padding: 0.5rem;
+    justify-content: center;
+}
+
+.total-item {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.discount-item {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.total-price {
+    border-top: 1px solid black;
+    margin-top: 30px;
+    width: 100%;
+    padding: 0.5rem;
+}

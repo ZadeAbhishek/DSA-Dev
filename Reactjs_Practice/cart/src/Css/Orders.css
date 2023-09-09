@@ -1,0 +1,41 @@
+.table-wapper {
+    width: 100%;
+}
+
+.table {
+    display: block;
+    table-layout: auto;
+    overflow: hidden;
+    overflow-x: hidden;
+    border-collapse: collapse;
+    border-radius: 10px;
+    white-space: nowrap;
+    width: 100em;
+    max-width: 80%;
+    margin: auto;
+    box-shadow: 0px 10px 10px #ccc;
+}
+
+.table thead {
+    background-color: #ccc;
+    color: #222;
+    font-size: larger;
+}
+
+.table th,
+.table td {
+    padding: 0.8rem;
+}
+
+.table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expand {
+    width: 80%;
+}
+
+.qty-expand {
+    width: 15%;
+}

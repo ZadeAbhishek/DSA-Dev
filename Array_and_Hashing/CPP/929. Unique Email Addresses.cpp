@@ -22,8 +22,6 @@ int numUniqueEmails(vector<string>& emails) {
             }
             domainsName.insert(temp);
         }
-        // for(auto x : domainsName) cout<<x<<" ";
-        // cout<<"\n";
         return domainsName.size();
     }
 

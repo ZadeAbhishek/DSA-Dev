@@ -24,44 +24,60 @@ public:
 class Solution3 {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-         
+        // Convert k to the index of the kth largest element (0-based index)
         k = (nums.size()) - k;
 
-        int start = 0;
-        int end = nums.size()-1; 
-        int index = start;
-        while(start <= end){
-            int pivot=nums[end];
-            int i=start-1;
-            for(int j=start;j<end;j++){
-            if(nums[j]<=pivot){
-                i++;
-                int temp=nums[i];
-                nums[i]=nums[j];
-                nums[j]=temp;
+        int start = 0;          // Initialize the start index for binary search
+        int end = nums.size() - 1; // Initialize the end index for binary search
+        int index = start;      // Initialize an index variable for partitioning
+
+        while (start <= end) {
+            int pivot = nums[end]; // Choose the pivot element (usually the last element)
+            int i = start - 1;    // Initialize a variable for the partitioning index
+
+            // Partition the array such that elements less than or equal to the pivot
+            // are moved to the left, and elements greater than the pivot are moved to the right
+            for (int j = start; j < end; j++) {
+                if (nums[j] <= pivot) {
+                    i++;
+                    // Swap nums[i] and nums[j]
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                }
+            }
+
+            i++;
+            // Swap nums[i] and nums[end] to place the pivot in its correct position
+            int temp = nums[end];
+            nums[end] = nums[i];
+            nums[i] = temp;
+
+            // If the desired kth largest element is on the left side of the pivot
+            if (k < i) {
+                end = i - 1;   // Update the end index for the left subarray
+                start = 0;     // Reset the start index for the left subarray
+            }
+            // If the desired kth largest element is on the right side of the pivot
+            else if (k > i) {
+                start = i + 1; // Update the start index for the right subarray
+            }
+            // If the desired kth largest element is at the pivot position
+            else {
+                return nums[i]; // Return the kth largest element
             }
         }
-        i++;
-        int temp=nums[end];
-        nums[end]=nums[i];
-        nums[i]=temp;
 
-            if((k) < i) end = i-1,start = 0;
-            else if((k) > i) start = i+1;
-            else return nums[i];
-            
-        }
-    
-
-        return -1;
+        return -1; // Return -1 if k is out of bounds
     }
 };
 
+
 void drive() {
-    vector<int> nums = {2,1};
+    vector<int> nums = {2,1,7,88,964};
     // sort(nums.begin(),nums.end());
     // reverse(nums.begin(),nums.end());
-    int k = 1;
+    int k = 4;
 
     Solution3 sol1;
     Solution2 sol2;

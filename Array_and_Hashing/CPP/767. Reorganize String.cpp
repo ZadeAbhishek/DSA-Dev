@@ -75,3 +75,7 @@ int main()
 
     return 0;
 }
+
+// variation of this algorith
+// arrenge men and womens
+// arrenge children with different height

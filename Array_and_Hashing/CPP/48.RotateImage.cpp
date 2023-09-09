@@ -45,7 +45,6 @@ void rotate(std::vector<std::vector<int>>& matrix) {
             }
         }
     
-    std::cout<<matrix;  
     // step 2 revese
     for(auto &row : matrix) std::reverse(row.begin(),row.end()); 
 

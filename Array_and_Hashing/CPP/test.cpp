@@ -1,6 +1,3 @@
-/* purpose is to determine whether it's possible to rearrange the characters in the input 
-   string str in such a way that no two adjacent characters are the same. */
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -22,8 +19,6 @@ class Solution
         for(auto &x : count){
             if(x == 0) continue;
             if(x % 2 == 0){
-
-                // check for even we need to balancve even 
                 if(even - x/2 >= 0) even -= x/2;
                 else even += x/2;
             }
@@ -50,7 +45,7 @@ int main() {
     Solution solution;
 
     // Example input: a string to be rearranged
-    string inputString = "aabbcc";
+    string inputString = "geeksforgeeks";
 
     string rearrangedString = solution.rearrangeString(inputString);
 

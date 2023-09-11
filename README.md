@@ -27,6 +27,16 @@ I am a fresher looking for an SDE Role. I am a Google Summer of Code 2021 partic
 | 20                       | O(2<sup>N</sup>)|
 | 11                       | O(N!)|
 
+If your goal is to design an algorithm yourself, one of the things it is important to realize is the expected
+running time of your algorithm. Usually, you can guess it from the problem statement (specifically, from
+the subsection called constraints) as follows. Modern computers perform roughly 108 –109 operations per
+second. So, if the maximum size of a dataset in the problem description is 𝑛 = 105 , then most probably an
+algorithm with quadratic running time is not going to fit into time limit (since for 𝑛 = 105 , 𝑛2 = 1010 ) while
+a solution with running time 𝑂(𝑛 log 𝑛) will fit. However, an 𝑂(𝑛2 ) solution will fit if 𝑛 is up to 103 = 1000,
+and if 𝑛 is at most 100, even 𝑂(𝑛3 ) solutions will fit. In some cases, the problem is so hard that we do not
+know a polynomial solution. But for 𝑛 up to 18, a solution with 𝑂(2𝑛 𝑛2 ) running time will probably fit into
+the time limit.
+
 
 ## Problem Solving Strategies
 

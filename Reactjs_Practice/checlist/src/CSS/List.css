@@ -1,0 +1,8 @@
+.list-container {
+    display: flex;
+    width: 20em;
+    align-items: center;
+    justify-content: space-between;
+    background-color: bisque;
+    margin-top: 0.5em;
+}

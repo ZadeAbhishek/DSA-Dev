@@ -11,3 +11,15 @@
 ### [Amortized Analysis: Aggregate Analysis and Accounting Method](https://www.youtube.com/watch?v=VgLh4_4Bkhc)
 
 ### [Hashing in Blockchain](https://www.youtube.com/watch?v=7EX7dMvOjWE)
+
+### [Data Science](https://www.youtube.com/watch?v=ua-CiDNNj30)
+
+## C++
+### [C++ Crash Course](https://www.youtube.com/watch?v=yGB9jhsEsr8)
+### [Lambda Expression](https://www.youtube.com/watch?v=MH8mLFqj-n8)
+### [Smart Pointers](https://www.youtube.com/watch?v=UOB7-B2MfwA)
+### [Ellipsis](https://www.youtube.com/watch?v=ASDAXMNkXQk)
+### [Sparse Matrix and Polynomial Representation](https://www.youtube.com/playlist?list=PL0x1zsLFiXsyDTxorwLPAdXYdUFRrrR55)
+
+## C
+### [C crach Course](https://www.youtube.com/watch?v=YXcgD8hRHYY)

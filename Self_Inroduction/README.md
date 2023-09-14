@@ -10,3 +10,11 @@ Apart from the Technical side coming to extra curricular I was media head of col
 
 
 
+# Extra
+Despite being a 2022 graduate and a fresher, I have an impressive track record as a Google Summer of Code 2021 participant, where I was mentored by experienced developers from both Google and Adobe. This year, I've taken on the role of mentoring students in Google Summer of Code, demonstrating my commitment to giving back to the community.
+
+Unlike current students, I have the advantage of being a graduate, which allows me to dedicate more time and effort to projects. In fact, I am ready to commit to a full-time internship position, harnessing my skills and expertise to contribute effectively.
+
+My proficiency in ReactJS is unquestionable, as I have successfully built complex projects, including those involving WebRTC technology. I'm not just a learner; I'm a capable and resourceful developer ready to take on challenging tasks and deliver exceptional results.
+
+So, if you're looking for someone who can hit the ground running, make a significant impact, and provide mentorship with a proven track record, look no further. I'm your candidate of choice.

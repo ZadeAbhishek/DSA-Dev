@@ -1,0 +1,36 @@
+class Solution {
+public:
+    #define que priority_queue<string,vector<string>,greater<string>>
+    unordered_map<string,que> graph;
+    vector<string> result;
+        void dfs(string curr_Station){
+        // if all station from current ticket is travel no need to move farther return
+        if(graph[curr_Station].size() == 0){
+            result.push_back(curr_Station);
+            return;
+        }
+         
+        auto &curr_destinations = graph[curr_Station]; 
+
+        while(!curr_destinations.empty()){
+            auto temp = curr_destinations.top();
+            curr_destinations.pop();
+            dfs(temp);
+        }
+
+        result.push_back(curr_Station);;
+    }
+    vector<string> findItinerary(vector<vector<string>>& tickets) {
+        graph.clear();
+        result.clear();
+        // make adjacent list
+        for(auto &ticket : tickets) graph[ticket[0]].push(ticket[1]);
+
+        dfs("JFK");
+
+        // in dfs we push everythinh at end
+        reverse(result.begin(),result.end());
+        
+        return result;
+    }
+};

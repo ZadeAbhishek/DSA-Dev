@@ -1,0 +1,24 @@
+
+body{
+    background-image: url('bg-image-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.navbar{
+    width: 100%;
+    height: 40px;
+    background-color: darkblue;
+}
+.navbar>a{
+    text-align: center;
+    color: wheat;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.bg-image{
+    margin-top: 10px;
+    background : url('img-1.jpg') no-repeat;
+    height: 550px;
+}

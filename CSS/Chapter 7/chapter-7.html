@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+     *{
+        padding: 0;
+        margin: 0;
+     }
+     
+     body{
+        background-color: green;
+        color: antiquewhite;
+        font-weight: bolder;
+        font-size: larger;
+        text-align: center;
+     }
+     header{
+        background-color: black;
+        display: grid;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: auto auto auto;
+     }
+
+     header>button{
+        background-color: rgb(29, 29, 199);
+        color: aliceblue;
+        font-weight: bolder;
+        width: 60px;
+        
+     }
+
+     @media only screen and (max-width:480px){
+        body{
+            background-color: yellow;
+            color: black;
+        }
+    }
+
+        @media only screen and (min-width: 481px) and (max-width: 767px){
+        body{
+            background-color: red;
+        }
+     }
+ </style>
+<body>
+    <header>
+        <button class="btn">menu</button>
+        <button class="btn">contact</button>
+        <button class="btn">view</button>
+        <button class="btn">Food</button>
+        <button class="btn">Money</button>
+        <button class="btn">Honey</button>
+        <button class="btn">Choclate</button>
+    </header>
+    Representation of CSS grid
+</body>
+</html>

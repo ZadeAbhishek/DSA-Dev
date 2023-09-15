@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+   header{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    z-index: 1;
+    top:0;
+   }
+
+   header>a{
+     text-decoration: none;
+     padding: 0.8em;
+     color: azure;
+   }
+   .container{
+    width: 100vw;
+
+   }
+   .container>ul{
+    list-style: square  inside;
+   }
+
+   .container2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    background-color: brown;
+    height: 1006px;
+   }
+
+   .insideContainer2{
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    background-color: black;
+    color: azure;
+    text-decoration: none;
+    padding: 0.8em;
+   }
+
+   .insideContainer3{
+    z-index: 2;
+    top: 45%;
+    left: 50%;
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    background-color: black;
+    color: azure;
+    text-decoration: none;
+    padding: 0.8em;
+    opacity: 50%;
+   }
+ </style>
+<body>
+  <header class="nav-bar">
+    <a href="#">Home</a>
+    <a href="#">Blog</a>
+    <a href="#">About us</a>
+    <a href="#">Contact</a>
+  </header>
+  <div class="container">
+    <ul>
+        <li>Dahi</li>
+        <li>Dudha</li>
+        <li>MaLai</li>
+        <li>Chach</li>
+    </ul>
+  </div>
+  <div class="container2">
+    <div class="insideContainer2">
+        This is Demonstation of container whoes postion is absolutewhich is relativeto container
+    </div>
+    <div class="insideContainer3">
+        This is Demonstation of Z-index
+    </div>
+  </div>
+</body>
+</html>

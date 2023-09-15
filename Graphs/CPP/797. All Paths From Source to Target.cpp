@@ -1,37 +1,49 @@
+#include <iostream>
+#include <vector>
+
 class Solution {
-  public:
-
-    void allPathsSourceTarget(vector < vector < int >> & graph, vector < int > & temp, vector < vector < int >> & result, int curr, vector < int > & vis) {
-
-      
-      // if curr node is last push path and return
-      if (curr == size(graph) - 1) { 
-        result.push_back(temp);
-      }
-      // else iterater the curr node adjecent and return 
-      else {
-        for (auto iterator: graph[curr]) {
-          if (!vis[iterator]) { // check for visibility
-            vis[iterator] = 1;
-            temp.push_back(iterator);
-            allPathsSourceTarget(graph, temp, result, iterator, vis);
-            temp.pop_back(); 
-            vis[iterator] = 0;
-          }
+public:
+    // DFS backtraking
+    void allPathsSourceTarget(std::vector<std::vector<int>>& graph, std::vector<int>& temp, std::vector<std::vector<int>>& result, int curr, std::vector<int>& vis) {
+        if (curr == graph.size() - 1) {
+            result.push_back(temp);
+        } else {
+            for (auto iterator : graph[curr]) {
+                if (!vis[iterator]) {
+                    vis[iterator] = 1;
+                    temp.push_back(iterator);
+                    allPathsSourceTarget(graph, temp, result, iterator, vis);
+                    temp.pop_back();
+                    vis[iterator] = 0;
+                }
+            }
         }
-      }
-
-      return;
-
     }
 
-  vector < vector < int >> allPathsSourceTarget(vector < vector < int >> & graph) {
-
-    vector < int > vis(size(graph), 0); // to check for visited graphs so not to visit again
-    vector < int > temp; // to push path
-    vector < vector < int >> result; // to push all path
-    temp.push_back(0); // we start with 0 (this is part is clear from question)
-    allPathsSourceTarget(graph, temp, result, 0, vis); // call (here we are using pass by reference to save memory)
-    return result; // return 
-  }
+    std::vector<std::vector<int>> allPathsSourceTarget(std::vector<std::vector<int>>& graph) {
+        std::vector<int> vis(graph.size(), 0);
+        std::vector<int> temp;
+        std::vector<std::vector<int>> result;
+        temp.push_back(0);
+        allPathsSourceTarget(graph, temp, result, 0, vis);
+        return result;
+    }
 };
+
+void printPaths(std::vector<std::vector<int>>& paths) {
+    for (const std::vector<int>& path : paths) {
+        for (int node : path) {
+            std::cout << node << " -> ";
+        }
+        std::cout << "\b\b\b   " << std::endl; // Remove the last "->" and add newline
+    }
+}
+
+int main() {
+    Solution solution;
+    std::vector<std::vector<int>> graph = {{1, 2}, {3}, {3}, {}};
+    std::vector<std::vector<int>> paths = solution.allPathsSourceTarget(graph);
+    std::cout << "All paths from source to target:" << std::endl;
+    printPaths(paths);
+    return 0;
+}

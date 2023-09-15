@@ -1,30 +1,61 @@
+#include<iostream>
+#include <vector>
+using namespace std;
+
 class Solution {
 public:
-    
-    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color,int curr) {
-        // consider if 1 is color we have given to change it to 2  or vise versa
-        //cout<<sr<<" "<<sc<<"\n"
-        
-        if(!(sr<0 || sc <0 || sr > size(image)-1 || sr > size(image)-1)){
-            
-        if(image[sr][sc] == color) return image;  
-        
-        if(image[sr][sc] == curr)
-        {
-            image[sr][sc] = color;
-            floodFill(image,sr,sc+1,color,curr);
-            floodFill(image,sr+1,sc,color,curr);
-            floodFill(image,sr-1,sc,color,curr);
-            floodFill(image,sr,sc-1,color,curr);
-            
+    void floodFillHelper(vector<vector<int>>& image, int sr, int sc, int color, int curr) {
+        // Check if the current pixel is within the bounds of the image
+        if (sr < 0 || sc < 0 || sr >= image.size() || sc >= image[0].size()) {
+            return;
         }
+
+        // Check if the current pixel has the same color as the starting pixel
+        if (image[sr][sc] != curr) {
+            return;
         }
-        
+
+        // Change the color of the current pixel
+        image[sr][sc] = color;
+
+        // Recursively call floodFill on neighboring pixels
+        floodFillHelper(image, sr + 1, sc, color, curr);
+        floodFillHelper(image, sr - 1, sc, color, curr);
+        floodFillHelper(image, sr, sc + 1, color, curr);
+        floodFillHelper(image, sr, sc - 1, color, curr);
+    }
+
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        // Check if the starting pixel has the same color as the new color
+        if (image[sr][sc] == color) {
+            return image;
+        }
+
+        // Call the helper function to perform the flood fill
+        floodFillHelper(image, sr, sc, color, image[sr][sc]);
+
         return image;
     }
-    
-    
-    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
-        return floodFill(image,sr,sc,color,image[sr][sc]);
-    }
 };
+
+int main() {
+    // Example usage
+    vector<vector<int>> image = {
+        {1, 1, 1},
+        {1, 1, 0},
+        {1, 0, 1}
+    };
+
+    Solution solution;
+    vector<vector<int>> result = solution.floodFill(image, 1, 1, 2);
+
+    // Print the result
+    for (const auto& row : result) {
+        for (int pixel : row) {
+            cout << pixel << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}

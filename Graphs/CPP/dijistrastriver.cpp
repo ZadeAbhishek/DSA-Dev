@@ -1,3 +1,6 @@
+// this algorithm is wrong improve next time 
+// explaination https://www.youtube.com/watch?v=6tLuiY59iYk
+
 #include<bits/stdc++.h>
 
 using namespace std;

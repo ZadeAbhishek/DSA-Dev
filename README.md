@@ -101,7 +101,10 @@ Save intermediate results or solutions to avoid redundant computations and look 
 Exploit any symmetry in the input or solution space to reduce the search space and optimize the problem-solving process.
 
 ## JavaScript Event Loop
-![Event LOOP](./StudyPDFs/EventLoop.gif)
+![Event LOOP](./Theory/EventLoop.gif)
+
+## React Life Cycle
+![React Life Cycle](./Theory/ReactComponents.png)
 
 ## Setup Guide
 

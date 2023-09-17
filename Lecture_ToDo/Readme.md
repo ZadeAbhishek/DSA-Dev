@@ -26,3 +26,6 @@
 
 ## CUDA
 ### [CUDA DOCS](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#mathematical-functions-appendix)
+
+## Web Scrapping
+### [web Scrapping](https://www.youtube.com/watch?v=XVv6mJpFOb0)

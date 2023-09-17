@@ -23,3 +23,6 @@
 
 ## C
 ### [C crach Course](https://www.youtube.com/watch?v=YXcgD8hRHYY)
+
+## CUDA
+### [CUDA DOCS](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#mathematical-functions-appendix)

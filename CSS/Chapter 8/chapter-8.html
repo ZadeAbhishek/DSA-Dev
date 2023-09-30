@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body{
+        background-color: rgb(16, 15, 15);
+     }
+     header{
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+        justify-content: space-evenly;
+        padding: 2px;
+     }
+
+     .button{
+        padding: 2px;
+        margin: 2px;
+        color: black; /* Change the text color to black */
+        border: 2px solid wheat;
+        width: 50%;
+        height: 40px;
+        justify-content: center;
+        text-align: center;
+        font-weight: bolder;
+        font-size: x-large;
+        background-color: white;
+        transition: background-color 0.5s ease-in; /* Smooth transition on hover */
+    }
+
+    .button:hover{
+        background-color: rgb(81, 1, 173); /* Change the background color on hover */
+        color: white; /* Change the text color on hover */
+        cursor: pointer;
+    }
+    .tile{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 200px;
+        height: 50px;
+        justify-content: space-between;
+        text-align: center;
+        color: black;
+        background-color: brown;
+        border: 2px white solid;
+        cursor: pointer;
+        left: 50%;
+        top: 50%;
+    }
+    .tile>span{
+        padding: 2px;
+        height: 100%;
+    }
+    .tile:hover>span.cross{
+        opacity: 1;
+    }
+    .cross{
+      position: absolute;
+      right: 0;
+      width: 20%;
+      height: 100%;
+      background-color: green;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      border: 2px black solid;
+      box-sizing: border-box;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="button">Home</div>
+        <div class="button">About</div>
+        <div class="button">Menu</div>
+        <div class="button">Contact</div>
+    </header>
+    <div class="tile"> <span>Buy</span> <span class="cross">x</span> </div>
+</body>
+</html>

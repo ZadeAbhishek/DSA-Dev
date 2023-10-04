@@ -3,7 +3,7 @@ using namespace std;
 
 class MyHashMap {
    vector<list<pair<int, int>>> table;
-   int size = 769;
+   int size = 769; // prime number
 
 public:
    // Constructor to initialize the hash map with a fixed size

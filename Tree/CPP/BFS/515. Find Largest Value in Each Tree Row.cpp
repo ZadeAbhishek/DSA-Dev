@@ -1,4 +1,22 @@
-class Solution {
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <climits>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+// First Solution Class
+class Solution1 {
 public:
     vector<int> largestValues(TreeNode* root) {
         // bfs traversal
@@ -24,7 +42,8 @@ public:
     }
 };
 
-class Solution {
+// Second Solution Class
+class Solution2 {
 public:
     vector<int> largestValues(TreeNode* root) {
         vector<int> result;
@@ -61,3 +80,43 @@ public:
         return result;
     }
 };
+
+// Driver Function
+int main() {
+    // Create a binary tree
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(3);
+    root->right = new TreeNode(2);
+    root->left->left = new TreeNode(5);
+    root->left->right = new TreeNode(3);
+    root->right->right = new TreeNode(9);
+
+    Solution1 sol1;
+    Solution2 sol2;
+
+    // Test Solution1
+    vector<int> result1 = sol1.largestValues(root);
+    cout << "Results from Solution1:" << endl;
+    for (int val : result1) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    // Test Solution2
+    vector<int> result2 = sol2.largestValues(root);
+    cout << "Results from Solution2:" << endl;
+    for (int val : result2) {
+        cout << val << " ";
+    }
+    cout << endl;
+
+    // Clean up memory
+    delete root->right->right;
+    delete root->left->right;
+    delete root->left->left;
+    delete root->right;
+    delete root->left;
+    delete root;
+
+    return 0;
+}

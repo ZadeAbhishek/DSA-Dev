@@ -15,6 +15,7 @@ struct ListNode {
 // Solution class
 class Solution {
 public:
+    // updated approch would be instead of using array just start slow and fast;
     int pairSum(ListNode* head) {
         // go to half and add the half
         ListNode* fast = head;

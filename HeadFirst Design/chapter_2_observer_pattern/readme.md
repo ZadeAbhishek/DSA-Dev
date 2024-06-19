@@ -19,7 +19,7 @@ Both patterns are used for event handling systems:
 
 ### 5. What are the potential drawbacks of using the Observer Pattern? How can these drawbacks be mitigated?
 - **Performance Overhead**: Frequent state changes can lead to performance issues due to numerous notifications. Mitigation: Use batching or throttling mechanisms to reduce the frequency of notifications.
-- **Memory Leaks**: Unregistered observers can lead to memory leaks. Mitigation: Implement a proper mechanism to unregister observers and use weak references if possible.
+- **Memory Leaks**: Unregistered observers can lead to memory leaks. Mitigation: Implement a proper mechanism to unregister observers and use weak references if possible.  
 
 ## Design Questions
 

@@ -19,7 +19,7 @@ class Solution{
   public:
  set<vector<int>> triplates_approch_1(vector<int> &arr){
      
-     // using for loop O(n^2)
+     // using for loop O(n^3)
      set<vector<int>> s;
 
      for(auto i = 0 ; i < arr.size() - 2 ; i++){

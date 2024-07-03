@@ -2,14 +2,8 @@
 using namespace std;
 
 vector<vector<int>> threeNumberSum(vector<int> array, int targetSum) {
-  // Write your code here.
   unordered_map<int,int> hash;
   for(auto num : array) hash.insert({num,num}); 
-   // 12 -> 12
-   // 3 -> 3
-   // hash[12] -> 12
-  // iterate over the array again'
-  // 0   2 + 6 == 8  8 - 0 = 8 0 - 8 = -8
   set<vector<int>> tempResult;
   for(int i = 0 ; i < array.size() ; i++){
      for(int j = i + 1 ; j < array.size() ; j++){

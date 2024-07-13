@@ -4,28 +4,27 @@ Welcome to this GitHub repository that provides a comprehensive collection of Da
 
 ### INDEX
 
-* [Time Complexity Contraints Table](#time-complexity-contraints-table)
-* [Problem Solving Techniques](#problem-solving-strategies)
-* [JavaScript Event Loop Diagram](#javascript-event-loop)
-* [Repository Setup Guide](#setup-guide)
+- [Time Complexity Contraints Table](#time-complexity-contraints-table)
+- [Problem Solving Techniques](#problem-solving-strategies)
+- [JavaScript Event Loop Diagram](#javascript-event-loop)
+- [Repository Setup Guide](#setup-guide)
 
 ## 🚀 About Me
 
 I am a fresher looking for an SDE Role. I am a Google Summer of Code 2021 participant with skills in Web Development and Machine Learning. I have also worked on various projects, such as MQTT servers using Flutter.
 
-
 ## Time Complexity Contraints Table
 
-| Contraints               | Time Complexity |
-| --------                 | -------  |
-| 10<sup>18</sup>          | O(logN)  |
-| 10<sup>8</sup>           | O(N)     |
-| 10<sup>6</sup>           | O(NlogN) |
-| 10<sup>4</sup>           | O(N<sup>2</sup>)|
-| 500                      | O(N<sup>3</sup>)|
-| 85-90                    | O(N<sup>4</sup>)|
-| 20                       | O(2<sup>N</sup>)|
-| 11                       | O(N!)|
+| Contraints      | Time Complexity  |
+| --------------- | ---------------- |
+| 10<sup>18</sup> | O(logN)          |
+| 10<sup>8</sup>  | O(N)             |
+| 10<sup>6</sup>  | O(NlogN)         |
+| 10<sup>4</sup>  | O(N<sup>2</sup>) |
+| 500             | O(N<sup>3</sup>) |
+| 85-90           | O(N<sup>4</sup>) |
+| 20              | O(2<sup>N</sup>) |
+| 11              | O(N!)            |
 
 If your goal is to design an algorithm yourself, one of the things it is important to realize is the expected
 running time of your algorithm. Usually, you can guess it from the problem statement (specifically, from
@@ -36,7 +35,6 @@ a solution with running time 𝑂(𝑛 log 𝑛) will fit. However, an 𝑂(𝑛
 and if 𝑛 is at most 100, even 𝑂(𝑛3 ) solutions will fit. In some cases, the problem is so hard that we do not
 know a polynomial solution. But for 𝑛 up to 18, a solution with 𝑂(2𝑛 𝑛2 ) running time will probably fit into
 the time limit.
-
 
 ## Problem Solving Strategies
 
@@ -101,9 +99,11 @@ Save intermediate results or solutions to avoid redundant computations and look 
 Exploit any symmetry in the input or solution space to reduce the search space and optimize the problem-solving process.
 
 ## JavaScript Event Loop
+
 ![Event LOOP](./Theory/EventLoop.gif)
 
 ## React Life Cycle
+
 ![React Life Cycle](./Theory/ReactComponents.png)
 
 ## Setup Guide
@@ -185,6 +185,7 @@ Check Total Files:
 ```bash
 git ls-files | wc -l
 git ls-files "./*.json" | wc -l
+git ls-files "./*.cpp" | wc -l
 ```
 
 Caution: Always keep your date and time updated for both operating systems.

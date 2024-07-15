@@ -41,7 +41,7 @@ public:
 int main() {
     // Example usage
     vector<vector<int>> image = {
-        {1, 1, 1},
+        {1, 0, 0},
         {1, 1, 0},
         {1, 0, 1}
     };

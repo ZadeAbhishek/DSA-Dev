@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "(gdb) Launch",
+          "type": "cppdbg",
+          "request": "launch",
+          "program": "${fileDirname}/${fileBasenameNoExtension}.exe", // Path to your compiled binary
+          "args": [],
+          "stopAtEntry": false,
+          "cwd": "${workspaceFolder}",
+          "environment": [],
+          "externalConsole": false,
+          "MIMode": "gdb",
+          "setupCommands": [
+              {
+                  "description": "Enable pretty-printing for gdb",
+                  "text": "-enable-pretty-printing",
+                  "ignoreFailures": true
+              }
+          ],
+          "miDebuggerPath": "/usr/bin/gdb",
+          "logging": {
+              "moduleLoad": false,
+              "trace": true,
+              "engineLogging": false,
+              "programOutput": true,
+              "exceptions": true
+          },
+          "preLaunchTask": "build"
+      }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "CPP Dev Container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "cpp_environment",
+    "workspaceFolder": "/work",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+      "ms-vscode.cpptools"
+    ]
+  }
+  

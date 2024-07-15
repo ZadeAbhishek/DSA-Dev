@@ -111,8 +111,9 @@ Exploit any symmetry in the input or solution space to reduce the search space a
 ### From Vscode Extension
 
 1. Install Docker.
-2. Install Dev-container.
-3. Run the following commands in the terminal:
+2. Install Docker-Compose
+3. Install Dev-container.
+4. Run the following commands in the terminal:
 
 ```bash
 sudo groupadd docker
@@ -125,55 +126,28 @@ sudo usermod -aG docker $USER
 sudo systemctl start docker
 ```
 
-5. Build Docker Image for Linux:
+5. Build Docker Image (First Time):
 
 ```bash
-sudo docker build . -t <ImageName>
+sudo docker-compose up --build 
 ```
 
-6. Start the Docker Image:
+6. Start Docker Image:
 
 ```bash
-sudo docker run -it --rm -v `pwd`:/work <ImageName/Id>
+sudo docker-compose up
 ```
 
-7. Directly run Step 1: Script Change User Permission:
+6. Stop Docker Image:
 
 ```bash
-chmod u+x run.sh
-sed -i -e 's/\r$//' run.sh
+sudo docker-compose down
 ```
 
-(Change your Docker name in run.sh)
-
-8. Directly run Step 2: After the first time, follow step 2 only:
-
-```bash
-./run.sh
-```
-
-9. List the Docker Image:
+7. List the Docker Image:
 
 ```bash
 sudo docker container ls
-```
-
-10. Stop the Docker Image:
-
-```bash
-sudo docker stop container_ID
-```
-
-### Build Docker Image for Windows:
-
-```bash
-docker build . -t <ImageName/Id>
-```
-
-### Start the Docker Image:
-
-```bash
-docker run -it --rm -v ${pwd}:/work <ImageName/Id>
 ```
 
 ## Additional Notes

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  cpp_environment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
+    working_dir: /work
+    command: /bin/bash
+    tty: true
+    stdin_open: true

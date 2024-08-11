@@ -3,7 +3,7 @@ using namespace std;
 
 vector<vector<int>> powerSet(vector<int> &arr, vector<int> temp, vector<vector<int>> &result){
     int n = arr.size();
-    
+   //	The expression i & (1 << j) checks whether the j-th bit in the binary representation of i is 1. 
     for(auto i = 0 ; i < pow(2,n) - 1 ; i++){
         temp.clear();
         for(auto j = 0 ; j < n ; j++){

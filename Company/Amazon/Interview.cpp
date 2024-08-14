@@ -25,7 +25,7 @@ If feature1[i] == feature1[j], the dataset is not considered free of outliers.
 
 int getLargestIndexLen(const std::vector<int>& feature1, const std::vector<int>& feature2) {
     int n = feature1.size();
-    std::vector<int> dp(n, 1);  // DP array initialized to 1
+    std::vector<int> dp(n, 1);
     
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n; ++j) {
@@ -37,6 +37,102 @@ int getLargestIndexLen(const std::vector<int>& feature1, const std::vector<int>&
     }
     
     return *std::max_element(dp.begin(), dp.end());
+}
+
+int main() {
+    std::vector<int> feature1 = {4, 5, 3, 1, 2};
+    std::vector<int> feature2 = {2, 1, 3, 4, 5};
+    
+    std::cout << getLargestIndexLen(feature1, feature2) << std::endl;  // Output: 2
+    
+    return 0;
+}
+
+/*
+Dry Run code
+{5,3,1,2}
+{1,3,4,5}
+
+dp = {1,1,1,1}; // since smallest valid sub sequent is one
+
+for i = 0 
+    j = 1 
+    5 > 3 && 1 < 3 not valid
+    i = 0 
+    j = 2
+    5 > 1 && 1 < 4 not valid
+    i = 0
+    j = 3
+    5 > 2 && i < 5 not valid
+    i = 0
+    j = 4 loop over 
+
+    dp = {1,1,1,1}
+
+    i = 1
+    j = 2
+    3 > 1 && 3 < 4 not valid
+    i = 1
+    j = 3
+    3 > 2 && 3 < 5 not valid
+    i = 1
+    j = 4 loop over
+
+    dp = {1,1,1,1}
+
+    i = 2
+    j = 3
+    1 < 2 && 4 < 5  true
+    dp[3] = max(dp[3],dp[2]+1)
+    dp[3] = max(1,2)
+    dp[3] = 2
+
+    i = 2
+    j = 4 loop over
+
+    dp = {1,1,2,1}
+
+    i = 3
+    j = 4 loop over
+
+    i = 4 loop over
+
+    dp = {1,1,2,1}
+
+    max = 2
+
+    ans = 2
+*/
+
+
+// recursive approch 
+
+#include <vector>
+#include <algorithm>
+#include <iostream>
+
+int getLargestIndexLenHelper(const std::vector<int>& feature1, const std::vector<int>& feature2, int i, int prevIndex) {
+    if (i == feature1.size()) {
+        return 0;
+    }
+
+    // Option 1: Don't include the current element (skip to the next element)
+    int exclude = getLargestIndexLenHelper(feature1, feature2, i + 1, prevIndex);
+
+    // Option 2: Include the current element if it forms a valid subsequence
+    int include = 0;
+    if (prevIndex == -1 || 
+       (feature1[prevIndex] > feature1[i] && feature2[prevIndex] > feature2[i]) ||
+       (feature1[prevIndex] < feature1[i] && feature2[prevIndex] < feature2[i])) {
+        include = 1 + getLargestIndexLenHelper(feature1, feature2, i + 1, i);
+    }
+
+    // Return the maximum of including or excluding the current element
+    return std::max(include, exclude);
+}
+
+int getLargestIndexLen(const std::vector<int>& feature1, const std::vector<int>& feature2) {
+    return getLargestIndexLenHelper(feature1, feature2, 0, -1);
 }
 
 int main() {

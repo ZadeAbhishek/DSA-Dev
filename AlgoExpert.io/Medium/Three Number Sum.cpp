@@ -3,7 +3,7 @@ using namespace std;
 
 vector<vector<int>> threeNumberSum(vector<int> array, int targetSum) {
   unordered_map<int,int> hash;
-  for(auto num : array) hash.insert({num,num}); 
+  for(auto num : array) hash.insert({num,num});
   set<vector<int>> tempResult;
   for(int i = 0 ; i < array.size() ; i++){
      for(int j = i + 1 ; j < array.size() ; j++){

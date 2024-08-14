@@ -44,3 +44,41 @@ vector<vector<int>> fourNumberSum(vector<int> array, int targetSum) {
 
     return finalResult;
 }
+
+
+
+// O(n^3) worst case time complexity
+// O(n^2) space complexity
+#include <vector>
+using namespace std;
+
+vector<vector<int>> fourNumberSum(vector<int> array, int targetSum) {
+  vector<vector<int>> result;
+  sort(array.begin(),array.end());
+  for(int i = 0 ; i < array.size(); i++){
+    if(i > 0 && array[i] == array[i-1]) continue; // skip it
+    for(int j = i + 1 ; j < array.size(); j++){
+      if(j != (i + 1) && array[j] == array[j-1]) continue;
+      int k = j + 1;
+      int l = array.size() - 1; // point to last
+      while(k < l){
+        long long sum = array[i];
+        sum += array[j];
+        sum += array[k];
+        sum += array[l];
+        if(sum == targetSum){
+          vector<int> temp = {array[i],array[j],array[k],array[l]};
+          k++;
+          l--;
+          while(k < l && array[k] == array[k+1]) k++;
+          while(k < l && array[l] == array[l-1]) l--;
+        }
+        else if(sum < targetSum){
+          k++;
+        }
+        else l--;
+       }
+    }
+  }
+  return result;
+}

@@ -25,6 +25,9 @@ public:
     }
 };
 
+
+
+//log n time complexity
 class Solution3 {
 public:
     vector<int> sortArrayByParity(vector<int>& nums) {

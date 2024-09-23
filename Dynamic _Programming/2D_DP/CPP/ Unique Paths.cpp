@@ -40,6 +40,7 @@ public:
     }
 };
 
+// pro max formula for interview perspective
 class Solution3 {
 public:
     int uniquePaths(int m, int n) {
@@ -57,7 +58,7 @@ int main() {
     Solution3 sol3;
 
     int m = 3;
-    int n = 7;
+    int n = 3;
 
     // Test the first solution.
     int result1 = sol.uniquePaths(m, n);

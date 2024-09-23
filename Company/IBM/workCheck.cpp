@@ -1,52 +1,26 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-// word checker
-bool checkWord(vector<string> table,string s){
-     int i = 0;
-     while(i < table.size()){
-        if(table[i] == s)
-        return true;
+// Helper function to check if the word can be segmented
+bool checkWord(const vector<string>& table, const string& s) {
+    unordered_set<string> wordSet(table.begin(), table.end()); // Convert to a set for O(1) lookups
+    vector<bool> dp(s.size() + 1, false); // dp[i] is true if s[0...i-1] can be segmented
+    dp[0] = true; // An empty string can always be segmented
 
-        i++;
+    for (int i = 1; i <= s.size(); ++i) {
+        for (int j = 0; j < i; ++j) {
+            string word = s.substr(j, i - j);
+            if (dp[j] && wordSet.find(word) != wordSet.end()) {
+                dp[i] = true;
+                break; // No need to continue if we already found a valid segmentation
+            }
+        }
     }
-    string temp; 
-    temp = sub
-
+    return dp[s.size()];
 }
 
 int main() {
-    // hashmap
-   vector<string> table;
-   table.push_back("IBM");
-   table.push_back("I");
-   table.push_back("LOVE");
-
-   string s = "ILOVEIBM";
- cout<<checkWord(table,s);
-   // idea is to use two pointer
-//    int i,j;
-//    i = j = 0;
-//    string temp;
-//    while(j<s.size()){
-//     int t = i;
-//     while(t <= j){
-//         temp.push_back(s[t]);
-//         t++;
-//     }
-    
-//     for(auto x = 0 ; x < table.size() ; x++){
-//         if(temp == table[x]){
-//             i = j+1;
-//             break;
-//         }
-//     }
-//      temp.erase();
-//      j++;
-//    }
-   
-//    if(j = i+1 )
-//    return true;
-//    else 
-//    return false;
+    vector<string> table = {"IBM", "I", "LOVE"}; // Word list
+    string s = "ILOVEIBM"; // Input string
+    cout << (checkWord(table, s) ? "Yes" : "No") << endl; // Output result
 }

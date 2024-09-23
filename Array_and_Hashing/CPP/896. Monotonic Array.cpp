@@ -1,5 +1,6 @@
-class Solution {
-public:
+#include <bits/stdc++.h>
+using namespace std;
+
     bool isMonotonic(vector<int>& nums) {
         int increasing = true;
         int decreasing = true;
@@ -10,4 +11,8 @@ public:
         }
         return true;
     }
-};
+
+int main(){
+    vector<int> nums = {1,2,3,4,3,6};
+    cout<<isMonotonic(nums)<<"\n";
+}

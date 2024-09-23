@@ -17,7 +17,7 @@ int lengthOfLIS(int nums[], int size, int curr, int prev) {
         }
  
         int notincludeCurr = 0;
-        notincludeCurr = 0 + lengthOfLIS(nums,size,curr+1,prev); // since we are not including our prev will not change
+        notincludeCurr = lengthOfLIS(nums,size,curr+1,prev); // since we are not including our prev will not change
 
         return std::max(includeCurr,notincludeCurr); // return max
 }
@@ -32,7 +32,7 @@ int lengthOfLISDp(int nums[], int size, int curr, int prev, std::vector<std::vec
         //        if we are including elements we know if curr > prev then olny include
         //        or if prev = -1
 
-        if(memo[curr][prev+1] != -1) return memo[curr][prev-1];
+        if(memo[curr][prev+1] != -1) return memo[curr][prev+1];
 
         int includeCurr = 0;
         if(prev == -1 || nums[curr] > nums[prev]){

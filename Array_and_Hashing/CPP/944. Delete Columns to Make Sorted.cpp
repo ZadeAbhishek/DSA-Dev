@@ -4,6 +4,7 @@ using namespace std;
 class Solution {
 public:
     int minDeletionSize(vector<string>& strs) {
+        
         int count = 0;
 
         // Iterate through each column of the strings

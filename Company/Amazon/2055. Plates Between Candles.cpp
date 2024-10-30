@@ -36,6 +36,7 @@ public:
 
             if(start == stringSize || end == -1 || start >= end || start + 1 == end) result.push_back(0);
             else {
+                // basically we are calculating the size of the array
                 int plates = end - start  - hash[end];
                 result.push_back(plates);
             }

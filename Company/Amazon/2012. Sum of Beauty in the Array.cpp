@@ -12,7 +12,6 @@ public:
         int lenght = end + 1;
         int sum = 0;
         while(start <= end){
-            
             int current = nums[start];
             int j = 0;
             int k = lenght;

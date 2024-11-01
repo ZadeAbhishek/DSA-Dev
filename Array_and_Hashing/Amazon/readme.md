@@ -1,5 +1,5 @@
 # Important Topics to look before Exam
-
+# Question in Amazon are drafted to make you confused Always keep trying all strategies
 ## Priority Queue (Check how to define max heap and min Heap)
 ## Kadane Algorithm for Sub array
 ## Learn HashMap

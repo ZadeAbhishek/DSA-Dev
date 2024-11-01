@@ -11,3 +11,7 @@
 ## Median 
 ## AbsoluteDifferences
 ## mutex
+## cumulative count
+## Recursive
+## BitManipulation
+## Greedy

@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+// ##Greedy 
 class Solution {
 public:
     int maximumNumberOfDaysToSurvive(vector<int>& lender, vector<int>& payback) {

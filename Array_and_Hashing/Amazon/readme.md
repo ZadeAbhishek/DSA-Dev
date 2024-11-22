@@ -25,3 +25,13 @@
 ## DFS 
 ## RelativePositions
 ## Prime Number
+## matrix
+## LongestCommonSubsequnce
+## slidingWindow
+
+
+
+# C++ Important Function 
+## stringstream
+## all_of
+## count(a.begin(),a.end(),count)

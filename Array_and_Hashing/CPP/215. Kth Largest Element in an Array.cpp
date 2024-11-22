@@ -29,7 +29,6 @@ public:
 
         int start = 0;          // Initialize the start index for binary search
         int end = nums.size() - 1; // Initialize the end index for binary search
-        int index = start;      // Initialize an index variable for partitioning
 
         while (start <= end) {
             int pivot = nums[end]; // Choose the pivot element (usually the last element)
@@ -81,9 +80,11 @@ void drive() {
 
     Solution3 sol1;
     Solution2 sol2;
+    Solution3 sol3;
 
     cout << "Using Solution1: " << sol1.findKthLargest(nums, k) << endl;
     cout << "Using Solution2: " << sol2.findKthLargest(nums, k) << endl;
+    cout << "Using Solution3: " << sol3.findKthLargest(nums, k) << endl;
 }
 
 int main() {

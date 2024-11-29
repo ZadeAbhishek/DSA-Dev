@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
+// ##Greedy
 vector<vector < int>> merge(vector<vector < int>> &intervals)
 {
 	// sort intervals according to start times

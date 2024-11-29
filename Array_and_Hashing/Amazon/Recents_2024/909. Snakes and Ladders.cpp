@@ -1,5 +1,6 @@
 class Solution {
 public:
+ // ##bfs ##zigzag
     int snakesAndLadders(vector<vector<int>>& board) {
         int n = board.size();
         vector<bool> visited(n * n+1, false);

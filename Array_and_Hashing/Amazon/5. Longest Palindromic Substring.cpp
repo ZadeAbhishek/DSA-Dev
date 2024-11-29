@@ -56,7 +56,9 @@ public:
         st = s;
 
         for(int i = 1 ; i < st.size(); i++){
+             // for odd len
              checkPalindrome(i-1,i+1);
+             // for even len
              checkPalindrome(i-1,i);
         }
         return s.substr(leftMax,(rightMax - leftMax + 1));

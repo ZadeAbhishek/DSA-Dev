@@ -23,11 +23,15 @@
 ## SQL Commands
 ## TicTacToe
 ## DFS 
+## bfs
+## zigzag
 ## RelativePositions
 ## Prime Number
 ## matrix
 ## LongestCommonSubsequnce
 ## slidingWindow
+## dp
+## Stack
 
 
 

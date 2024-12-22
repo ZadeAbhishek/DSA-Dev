@@ -15,7 +15,7 @@ public:
             for(auto i = start[n]; i <= end[n] && i < items.size() - 1; i++){
                 itemsCount[items[i]]++;
             }
-            n++;
+
         }
         set<int> itemsHash(items.begin(),items.end());
         vector<long long> ans;

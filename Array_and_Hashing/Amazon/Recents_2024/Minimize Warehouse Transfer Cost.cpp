@@ -7,7 +7,7 @@ using namespace std;
 
 long long minimizeWarehouseTransferCost(const vector<int>& warehouses) {
     int n = warehouses.size();
-    long long total_items = accumulate(warehouses.begin(), warehouses.end(), 0LL);
+    long long total_items = accumulate(warehouses.begin(), warehouses.end(), 0);
     int target = total_items / n;
 
     long long cumulative_balance = 0;

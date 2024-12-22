@@ -66,4 +66,13 @@
 - Skip Lists
 - Finding the Median in a Sorted Array
 
-This classification should provide a clear and organized overview of algorithms based on their time complexity characteristics.
+# Revision
+
+## Palindrome Question
+### Approch
+1. Using Brute force for loop 
+2. Using Middle Expansion Technique
+
+## Sub Sum Question
+### Apporch for Triple sum
+1. Three pointer appoch one fix pointer two rotating pointer one from start and one from end.

@@ -51,7 +51,7 @@ public:
 
         // Use a min-heap to store the top k elements
         auto cmp = [](const custVar& a, const custVar& b) {
-            return (a.second > b.second) || (a.second == b.second && a.first < b.first);
+            return (a.second > b.second) || (a.second == b.second && a.first < b.first); // for topological
         };
         
         priority_queue<custVar, vector<custVar>, decltype(cmp)> minHeap(cmp);

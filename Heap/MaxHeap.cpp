@@ -25,7 +25,7 @@ public:
     void heapSort();
 };
 
-MaxHeap::MaxHeap() {}
+MaxHeap::MaxHeap() {} // no use
 
 void MaxHeap::push(int x)
 {

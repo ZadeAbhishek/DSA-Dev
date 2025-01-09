@@ -9,7 +9,7 @@ int binarySearch(vector<int> array, int target) {
    int mid  = start + (end - start)/2;
    if(array[mid] == target) return mid;
    if(target > array[mid]) start = mid + 1;
-   else end = mid - 1; 
+   else end = mid - 1;
   }
   return -1;
 }

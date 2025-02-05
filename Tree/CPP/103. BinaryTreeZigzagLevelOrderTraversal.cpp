@@ -87,7 +87,7 @@ class Solution
     return;
   }
 
-  vector<vector < int>> zigzagLevelOrder(TreeNode *root)
+  vector<vector<int>> zigzagLevelOrder(TreeNode *root)
   {
     int level = 0;
     vector<vector < int>> result;

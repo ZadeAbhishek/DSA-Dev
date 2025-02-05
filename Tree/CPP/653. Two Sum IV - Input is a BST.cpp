@@ -52,3 +52,68 @@ public:
         return findTarget(root->left,k) || findTarget(root->right,k);
     }
 };
+
+
+// More optimised Appooch 
+
+class BSTIterator {
+public:
+    stack<TreeNode*> st;
+    bool reverse;
+    
+    BSTIterator(TreeNode* root, bool isReverse) : reverse(isReverse) {
+        pushAll(root);
+    }
+    
+    // Returns the next element in the iteration
+    int next() {
+        TreeNode* tmpNode = st.top();
+        st.pop();
+        if (!reverse) pushAll(tmpNode->right);
+        else pushAll(tmpNode->left);
+        return tmpNode->val;
+    }
+    
+    // Checks if there are more elements to iterate
+    bool hasNext() {
+        return !st.empty();
+    }
+    
+private:
+    void pushAll(TreeNode* node) {
+        while (node) {
+            st.push(node);
+            if (!reverse) node = node->left;
+            else node = node->right;
+        }
+    }
+};
+
+class Solution {
+public:
+    bool findTarget(TreeNode* root, int k) {
+        if (!root) return false;
+        
+        // Initialize two iterators
+        BSTIterator leftIter(root, false);  // In-order (ascending)
+        BSTIterator rightIter(root, true);  // Reverse in-order (descending)
+        
+        int i = leftIter.next();
+        int j = rightIter.next();
+        
+        while (i < j) {  // Ensure that we don't use the same element twice
+            long long sum = (long long)i + (long long)j;
+            if (sum == k) return true;
+            else if (sum < k) {
+                if (leftIter.hasNext()) i = leftIter.next();
+                else break;
+            }
+            else {  // sum > k
+                if (rightIter.hasNext()) j = rightIter.next();
+                else break;
+            }
+        }
+        
+        return false;
+    }
+};

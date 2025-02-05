@@ -17,6 +17,9 @@ public:
 };
 
 
+// in this approch stack in used to access the current highest element than nums[i] i.e k.
+// Queue might fail as it will last highesy number not current highest number than nums[i] i.e k
+// k becuase we are travelling in reverse order here 
 // ##Stack
 class Solution {
 public:

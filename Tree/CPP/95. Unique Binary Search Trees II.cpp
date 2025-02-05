@@ -11,7 +11,7 @@ struct TreeNode {
 };
 
 class Solution {
-    vector<vector<vector<TreeNode*>>> dp;
+    vector<vector<vector<TreeNode*>>> dp; // 3d dp ???
 public:
     vector<TreeNode*> generateTree(int end, int start = 1) {       
         // If start > end, then subtree will be empty so we will directly return null pointer

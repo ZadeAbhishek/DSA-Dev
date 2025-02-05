@@ -25,5 +25,17 @@ public:
     }
 };
 
+int numTreesBottomUp(int n) {
+    vector<int> dp(n + 1, 0);
+    dp[0] = dp[1] = 1; // Base cases
+
+    for(int j = 2; j <= n; ++j) {
+        for(int i = 1; i <= j; ++i) {
+            dp[j] += dp[i - 1] * dp[j - i];
+        }
+    }
+
+    return dp[n];
+}
 
 int main(){}

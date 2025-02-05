@@ -29,6 +29,7 @@ public:
             // edge case
             if(preorder.size() < 1 && inorder.size() < 1) return NULL;
             
+            // base case
             if(preorder.size() == 1 && inorder.size() == 1){
                 TreeNode* root = new TreeNode(preorder[0]);
                 root->left = NULL;
@@ -36,7 +37,7 @@ public:
                 return root;
             }
 
-
+           // original Reccusrende
             TreeNode* root = new TreeNode();
             root->val = preorder[0];
             vector<int> leftInorder;

@@ -1,12 +1,19 @@
 # Introduce Yourself
 
-Good Morning/evening / Afternoon sir/Maam Myself Abhishek Zade. I am from Chandrapur Maharashtra. I have done my Bachelor of Engineering with Honors in Data Science from AISSMS Institutes of Information Technology Pune University. Scoring 8.77 GPA.
+Good morning/afternoon/evening,
 
-I have done my 6 months of Internship in Pune based startup named Zenture IT Solution where my role was Frontend Developer. In the third year of my college, I was part of the Google Summer of Code 2021 and worked on a vanilla Javascript-based project named TouchCompatibilty to Simulator which enables the user to access the software through their phones. My final year Project is based on Machine learning and Natural language processing tittle Subjective Answer Evaluation Using Machine Learning and Natural Language Processing.
+My name is Abhishek Zade, and I am currently pursuing my Master’s in Computer Science at Trinity College. I completed my Bachelor’s in Information Technology with Honors in Data Science from AISSMS Institutes of Information Technology, Pune University, where I graduated with an 8.77 GPA.
 
-I have skills in C++, Javascript, and Beginner in Python. I also have knowledge of Django and Reactjs Framework and Beginner in Flutter.
+During my undergraduate studies, I interned as a Frontend Developer at Zenture IT Solutions, a Pune-based startup, and participated in the Google Summer of Code 2021. In that program, I contributed to a project called TouchCompatibility to Simulator, which enabled mobile-based access to software. My final year project also focused on cutting-edge techniques, as I developed a machine learning and natural language processing solution for subjective answer evaluation.
 
-Apart from the Technical side coming to extra curricular I was media head of college in my final year of college. I have managed a team of 40 students from various departments across the AISSMS campus. Finally have also worked as a Freelance Video editor for a Delhi-based Youtuber having 700K subscribers. 
+I am proficient in C++ and JavaScript and have experience working with Python, Django, and React.js. In addition to my technical skills, I served as the Media Head for my college, managing a team of 40 students from various departments, and I have also worked as a freelance video editor for a prominent Delhi-based YouTube channel with over 700K subscribers.
+
+More recently, I gained valuable industry experience at Jio Platforms Limited, where I spent a year working on backend systems using Next.js and Node.js. I believe my technical expertise, practical project experience, and leadership background position me well to contribute to the innovative environment at Amazon.
+
+Thank you for your time and consideration.
+
+Sincerely,
+Abhishek Zade
 
 
 

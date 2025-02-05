@@ -28,11 +28,11 @@ public:
         // Write your code here
         unordered_map<int,int> hash_1;
         unordered_map<int,int> hash_2;
-        traverse(hash_1,root1);
-        traverse(hash_2,root2);
-        for(auto x : hash_1){
+        traverse(hash_1,root1); // T O(N)
+        traverse(hash_2,root2); // T O(N)
+        for(auto x : hash_1){  
             int sum1 = x.first;
-            if(hash_2.count(target - sum1)) return true;
+            if(hash_2.count(target - sum1)) return true; // T O(N)
         }
         return false;
     }

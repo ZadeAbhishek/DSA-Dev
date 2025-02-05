@@ -31,7 +31,7 @@ struct TreeNode {
 
            for(auto leftNodes : leftVector){
                for(auto rightNodes : rightVector){
-                   currList.push_back(new TreeNode(0,leftNodes,rightNodes));
+                   currList.push_back(new TreeNode(i,leftNodes,rightNodes));
                }
            }
        }
@@ -41,5 +41,6 @@ struct TreeNode {
 
 int main(){
 
-    allPossibleFBT(7);
+   auto x = allPossibleFBT(7);
+   cout<<x.size()<<endl;
 }
